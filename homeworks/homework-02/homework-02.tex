@@ -1,0 +1,222 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Asignacion\ \#1}
+\newcommand{\hmwkDueDate}{Septiembre 5, 2024}
+\newcommand{\hmwkClass}{MATE 5150}
+\newcommand{\hmwkClassInstructor}{Dr. Pedro Vasquez}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Homework sec 1.4, prob 2d
+\begin{homeworkProblem}
+	Solve the following systems of linear equations by the method introduced introduces in this section.
+	\[
+		\begin{aligned}
+			x_1 & \quad + 2x_2 \quad & + 2x_3 \quad & \quad \quad & = 2  \\
+			x_1 & \quad \quad        & + 8x_3 \quad & + 5x_4      & = -6 \\
+			x_1 & \quad + x_2 \quad  & + 5x_3 \quad & + 5x_4      & = 3
+		\end{aligned}
+	\]
+\end{homeworkProblem}
+
+% Homework sec 1.4, prob 5d
+\begin{homeworkProblem}
+	In each part, determine whether the given vector is in the span of $S$.
+	\[
+		(2,-1,1,-3) \quad \text{where} \quad S = \{ x^3 + x^2 + x + 1, x^2 + x + 1, x + 1\}
+	\]
+\end{homeworkProblem}
+
+% Homework sec 1.4, prob 6
+\begin{homeworkProblem}
+	Show that the vectors $(1,1,0)$, $(1,0,1)$, and $(0,1,1)$ generate $\mathbb{F}^3$
+\end{homeworkProblem}
+
+% Homework sec 1.4, prob 15
+\begin{homeworkProblem}
+	Let $S_1$ and $S_2$ be subsets of a vector space $V$. Prove that $span(S_1 \cap S_2) \subseteq span(S_1) \cap span(S_2)$. Give an example in which $span(S_1 \cap S_2) $ and
+	$span(S_1) \cap span(S_2)$ are equal and one in which they are not equal.
+\end{homeworkProblem}
+
+% Homework sec 1.5, prob 2d
+\begin{homeworkProblem}
+	Determine whether the following sets are linearly dependent or linearly independent.
+	$$\{ x^3 - x, 2x^2 + 4, -2x^3 + 3x^2 + 2x + 6 \}$$
+\end{homeworkProblem}
+
+% Homework sec 1.5, prob 6
+\begin{homeworkProblem}
+	In $M_{m \times n}(\mathbb{F})$, let $E_{ij}$ denote the matrix whose only nonzero entry is a 1 in the $i$th row and $j$th column. Prove that $\{ E_{ij} : 1 \leq i \leq m, 1 \leq j \leq n \}$
+	is linearly independent.
+\end{homeworkProblem}
+
+% Homework sec 1.5, prob 20
+\begin{homeworkProblem}
+	Let $f,g, \in \mathcal{F}(R,R)$ be the function defined by $f(x) = e^{rt}$ and $g(x) = e^{st}$, where $r \neq s$. Prove that $f$ and $g$ are linearly independent in $\mathcal{F}(R,R)$.
+\end{homeworkProblem}
+
+% Homework sec 1.6, prob 2e
+\begin{homeworkProblem}
+	Determine which of the following sets are bases for $\mathbb{R}^3$.
+	\[ \{ (1,-3,1), (-3,1,3), (-2,-10,2) \} \]
+\end{homeworkProblem}
+
+% Homework sec 1.6, prob 7
+\begin{homeworkProblem}
+	The vectors $u_1 = (2,-3,1)$, $u_2 = (1,4,-2)$, $u_3 = (-8,12,-4)$, $u_4 = (1,37,-17)$ and $u_5 = (-3,-5,8)$ generate $\mathbb{R}^3$. Find a subset of the set $\{ u_1, u_2, u_3, u_4, u_5 \}$
+	that is a basis for $\mathbb{R}^3$.
+\end{homeworkProblem}
+
+% Homework sec 1.6, prob 9
+\begin{homeworkProblem}
+	The vectors $u_1 = (1,1,1,1)$, $u_2 = (0,1,1,1)$, $u_3 = (0,0,1,1)$, and $u_4 = (0,0,0,1)$ form a basis for $\mathbb{R}^4$. Find the unique representation of an  arbitrary vector $v = (a_1, a_2, a_3, a_4)$
+	$\mathbb{R}^4$ as a linear combination of $u_1, u_2, u_3, u_4$.
+\end{homeworkProblem}
+
+% Homework sec 1.6, prob 10
+\begin{homeworkProblem}
+	In each part, use the Lagrange interpolation formula to construct the polynomial of smallest degree whose graph contains the following points. $(-2,3),(-1,-6),(1,0),(3,-2)$.
+\end{homeworkProblem}
+
+% Homework sec 1.6, prob 16
+\begin{homeworkProblem}
+	The set of all upper triangular $n \times n$ matrices is a subspace of $W$ of $M_{n \times n}(\mathbb{F})$. Find a basis for $W$. What is the dimension of $W$?
+\end{homeworkProblem}
+
+
+\end{document}
+
+
