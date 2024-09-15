@@ -140,7 +140,7 @@
 
 \pagebreak
 
-% Homework problem 1
+% Homework sec 1.1, prob 3d
 \begin{homeworkProblem}
 	Find the equation of the plane through he following pairs of points in space. $P_1(1,1,1)$, $P_2(5,5,5)$, and
 	$P_3(-6,4,2)$.
@@ -153,7 +153,7 @@
 	\]
 \end{homeworkProblem}
 
-% Homework problem 2
+% Homework sec 1.1, prob 6
 \begin{homeworkProblem}
 	Show thaat the midpoint of the line ssegment joining the points $(a,b)$ and $(c,d)$ is ($\frac{a+c}{2}, \frac{b+d}{2}$).
 	\[
@@ -166,7 +166,7 @@
 	\]
 \end{homeworkProblem}
 
-% Homework problem 3
+% Homework sec 1.2, prob 7
 \begin{homeworkProblem}
 	Let $S = \{0,1\}$ and $F = R$. In $\mathcal{F(S,R)}$, show that $f= g$ and $f + g = h$, where $f(t) = 2t + 1$,
 	$g(t) = 1 + 4t - 2t^2$, and $h(t) = 5^t + 1$. \\
@@ -195,22 +195,24 @@
 	\]
 \end{homeworkProblem}
 
-% Homework problem 4
+% Homework sec 1.2, prob 13
 \begin{homeworkProblem}
 	Let $V$ denote the set of ordered pairs of real numbers. If $(a_1, a_2)$ and $(b_1, b_2)$ are
 	elements of $V$ and $c \in R$, define $(a_1, a_2) + (b_1, b_2) = (a_1 + b_1, a_2 b_2)$ and
-	$c(a_1, a_2) = (ca_1, ca_2)$.
+	$c(a_1, a_2) = (ca_1, a_2)$. Is $V$ a vector space over $R$ with these operations? Justify your answer.
 	\[
 		\begin{split}
-			d
+			\text{It is not a vector space because it does not hold for the commutative of addition property.} \\
+			0(a_1, a_2) = (0a_1, a_2) = (0, a_2) \\
+			\text{since $a_2$ is not unique, and by theorem 1.1, it is not a vector space.}
 		\end{split}
 	\]
 \end{homeworkProblem}
 
-% Homework problem 5
+% Homework sec 1.2, prob 18
 \begin{homeworkProblem}
 	Let $V = \{(a_1, a_2): a_1, a_2 \in R\}$. For $(a_1, a_2)$ and $(b_1, b_2)$ in $V$ and $c \in R$,
-	defin $(a_1, a_2) + (b_1, b_2) = (a_1 + b_1, a_2 + b_2)$ and $c(a_1, a_2) = (ca_1, ca_2)$.
+	define $(a_1, a_2) + (b_1, b_2) = (a_1 + b_1, a_2 + b_2)$ and $c(a_1, a_2) = (ca_1, ca_2)$.
 	$$ (a_1, a_2) + (b_1, b_2) = (a_1 + 2b_1, a_2 + 3b_2) $$
 	Is $V$ a vector space over $R$ with these operations? Justify your answer. \\
 	No, It does not hold for the commutative of addition property.
@@ -223,7 +225,7 @@
 	\]
 \end{homeworkProblem}
 
-% Homework problem 6
+% Homework sec 1.3, prob 5
 \begin{homeworkProblem}
 	Prove that $A + A^t$ is symmetric for any matrix $A$.
 	\[
@@ -235,26 +237,38 @@
 	\]
 \end{homeworkProblem}
 
-% Homework problem 7
+% Homework sec 1.3, prob 9
 \begin{homeworkProblem}
 	Let $W_1$, $W_3$, and $W_4$ be as in Excersise 8. Describe $W_1 \cap W_3$, $W_1 \cap W_4$, and $W_3 \cap W_4$,
 	and observe that each is a subspace of $R^3$.
 	\[
 		\begin{split}
-			d
+			W_1 \cap W_3 &= \{ (a_1, a_2, a_3) \in R^3 : a_1 \text{ and } a_3 = -a_2 \} \cup \{ (a_1, a_2, a_3) \in R^3 : 2a_1 - 7a_2 + a_3 = 0 \} \\
+			W_1 \cap W_3 &= \{ (a_1, a_2, a_3) \in R^3 : 6a_2 - 7a_2 - a_2 = 0 \} \\
+			W_1 \cap W_3 &= \{ 0 \} \text{ and is a subspace of } R^3 \\
+			W_1 \cap W_4 &= \{ (a_1, a_2, a_3) \in R^3 : a_1 \text{ and } a_3 = -a_2 \} \cup \{ (a_1, a_2, a_3) \in R^3 : a_1 - 4a_2 -a_3 = 0 \} \\
+			W_1 \cap W_4 &= \{ (a_1, a_2, a_3) \in R^3 : 3a_2 - 4a_2 - a_2 = 0 \} \\
+			W_1 \cap W_4 &= \{ 0 \} \text{ and is a subspace of } R^3 \\
+			W_3 \cap W_4 &= \{ (a_1, a_2, a_3) \in R^3 : 2a_1 - 7a_2 + a_3 = 0 \} \cup \{ (a_1, a_2, a_3) \in R^3 : a_1 - 4a_2 - a_3 = 0 \} \\
+			W_3 \cap W_4 &= \{ (a_1, a_2, a_3) \in R^3 : a_1 - 3a_2 + 2a_2 = 0 \} \text{ and is a subspace of } R^3 \\
 		\end{split}
 	\]
 \end{homeworkProblem}
 
-% Homework problem 8
+% Homework sec 1.3, prob 16
 \begin{homeworkProblem}
 	Let $C^n(R)$ denote the set of all real-valued functions defined on the real line that have a continuous \textit{n}th derivative. Prove that
 	$C^n(R)$ is a subspace of $\mathcal{F}(R,R)$.
-	\[
-		\begin{split}
-			d
-		\end{split}
-	\]
+	\begin{proof}
+		\begin{align*}
+			f(x)       & = 0 \quad \text{for all} \quad x \in R \\
+			f'(x)      & = 0 \quad \text{for all} \quad x \in R \\
+			f''(x)     & = 0 \quad \text{for all} \quad x \in R \\
+			           & \vdots                                 \\
+			f^{(n)}(x) & = 0 \quad \text{for all} \quad x \in R \\
+		\end{align*}
+		Thus $C^n(R)$ is a subspace of $\mathcal{F}(R,R)$.
+	\end{proof}
 \end{homeworkProblem}
 
 \end{document}
