@@ -1,0 +1,201 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Asignacion\ \#3}
+\newcommand{\hmwkDueDate}{Septiembre 26, 2024}
+\newcommand{\hmwkClass}{MATE 5150}
+\newcommand{\hmwkClassInstructor}{Dr. Pedro Vasquez}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Homework problem 1 sec 2.1, prob 3
+\begin{homeworkProblem}
+	Prove that $T$ is a linear transformation, and find bases for both $N(T)$ and $R(T)$. Then compute the
+	nulity and rank of $T$, and verify the dimension theorem. Finally use the appropriate theorems in this section
+	to determine wheather $T$ is one-to-one or onto.
+	$$T:R^2 \rightarrow R^3 \text{ defined by } T(a_1, a_2) = (a_1 + 2a_2, 0, 2a_1 - a_2)$$
+\end{homeworkProblem}
+
+% Homework problem 2 sec 2.1, prob 4
+\begin{homeworkProblem}
+	Prove that $T$ is a linear transformation, and find bases for both $N(T)$ and $R(T)$. Then compute the
+	nulity and rank of $T$, and verify the dimension theorem. Finally use the appropriate theorems in this section
+	to determine wheather $T$ is one-to-one or onto.
+	\[
+		T:M_{2x3} (F) \rightarrow M_{2x2} (F) \text{ defined by } T
+		\begin{pmatrix}
+			a_{11} & a_{12} & a_{13} \\
+			a_{21} & a_{22} & a_{23}
+		\end{pmatrix} =
+		\begin{pmatrix}
+			2a_{11} - a_{12} & a_{13} + 2a_{12} \\
+			0                & 0
+		\end{pmatrix}
+	\]
+\end{homeworkProblem}
+
+% Homework problem 3 sec 2.1, prob 9e
+\begin{homeworkProblem}
+	In this exercise, $T:R^2 \rightarrow R^2$ is a function. State why $T$ is not linear.
+	$$T(a_1, a_2) = (a_1 + 1, a_2)$$
+\end{homeworkProblem}
+
+% Homework problem 4 sec 2.1, prob 12
+\begin{homeworkProblem}
+	Is there a linear transformation $T:R^3 \rightarrow R^2$ such that $T(1, 0, 3) = (1,1)$ and $T(-2,0, -6) = (2,1)$?
+\end{homeworkProblem}
+
+% Homework problem 5 sec 2.1, prob 13
+\begin{homeworkProblem}
+	Let $V$ and $W$ be vector spaces, let $T:V \rightarrow W$ be a linear, and let $\{w_1, w_2,\ldots,w_k\}$
+	be a linearly independent set of $k$ vectors from $R(T)$. Prove that if $S = \{v_1, v_2,\ldots,v_k\}$ is chosen
+	so that $T(v_i) = w_i$ for $i = 1,2,\ldots,k$, then $S$ is linearly independent. Visit goo.gl/kmaQS2 for a solution.
+\end{homeworkProblem}
+
+% Homework problem 6 sec 2.2, prob 2
+\begin{homeworkProblem}
+	Let $\beta$ and $\gamma$ be the standard ordered bases for $R^n$ and $R^m$, respectively. For each linear
+	transformation $T:R^n \rightarrow R^m$, compute $[T]^{\gamma}_{\beta}$.
+	\begin{enumerate}
+		\item $T:R^3 \rightarrow R \text{ defined by } T(a_1, a_2, a_3) = 2a_1 + a_2 - 3a_3 $
+		\item $T:R^n \rightarrow R^n \text{ defined by } T(a_1, a_2, \ldots, a_n) = (a_n, a_{n-1},\ldots,a_1)$
+	\end{enumerate}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+\end{homeworkProblem}
+\end{document}
+
+
