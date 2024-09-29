@@ -146,6 +146,18 @@
 	nulity and rank of $T$, and verify the dimension theorem. Finally use the appropriate theorems in this section
 	to determine wheather $T$ is one-to-one or onto.
 	$$T:R^2 \rightarrow R^3 \text{ defined by } T(a_1, a_2) = (a_1 + 2a_2, 0, 2a_1 - a_2)$$
+	\[
+		\begin{split}
+			T(x + y) &= T(x) + T(y) \\
+			T(b_1 + d_1, b_2 + d_2) &= T(b_1, b_2) + T(d_1, d_2) \\
+			(b_1 + b_2 + d_1 + d_2, 0, 2b_1 - b_2 + 2d_1 - d_2) &= (b_1 + 2b_2, 0, 2b_1 - b_2) + (d_1 + 2d_2, 0, 2d_1 - d_2) \\
+			T(cx) &= cT(x) \\
+			T(c(b_1, b_2)) &= cT(b_1, b_2) \\
+			(cb_1 + 2cb_2, 0, 2cb_1 - cb_2) &= c(b_1 + 2b_2, 0, 2b_1 - b_2) \\
+			(cb_1 + 2cb_2, 0, 2cb_1 - cb_2) &= (cb_1 + 2cb_2, 0, 2cb_1 - cb_2) \\
+		\end{split}
+	\]
+	Thus $T$ is a linear transformation. The nulity of $T$ is 0, and the rank of $T$ is 2.
 \end{homeworkProblem}
 
 % Homework problem 2 sec 2.1, prob 4
@@ -164,17 +176,44 @@
 			0                & 0
 		\end{pmatrix}
 	\]
+	\[
+		\begin{split}
+			T(x + y) &= T(x) + T(y) \\
+			T(\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \end{pmatrix} + \begin{pmatrix} b_{11} & b_{12} & b_{13} \\ b_{21} & b_{22} & b_{23} \end{pmatrix}) &= T(\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \end{pmatrix}) + T(\begin{pmatrix} b_{11} & b_{12} & b_{13} \\ b_{21} & b_{22} & b_{23} \end{pmatrix}) \\
+			T(\begin{pmatrix} a_{11} + b_{11} & a_{12} + b_{12} & a_{13} + b_{13} \\ a_{21} + b_{21} & a_{22} + b_{22} & a_{23} + b_{23} \end{pmatrix}) &= \begin{pmatrix} 2(a_{11} + b_{11}) - (a_{12} + b_{12}) & a_{13} + 2(a_{12} + b_{12}) \\ 0 & 0 \end{pmatrix} \\
+			\begin{pmatrix} 2(a_{11} + b_{11}) - (a_{12} + b_{12}) & a_{13} + 2(a_{12} + b_{12}) \\ 0 & 0 \end{pmatrix} &= \begin{pmatrix} 2(a_{11} + b_{11}) - (a_{12} + b_{12}) & a_{13} + 2(a_{12} + b_{12}) \\ 0 & 0 \end{pmatrix} \\
+			T(cx) &= cT(x) \\
+			T(c\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \end{pmatrix}) &= cT(\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \end{pmatrix}) \\
+			\begin{pmatrix} 2ca_{11} - ca_{12} & ca_{13} + 2ca_{12} \\ 0 & 0 \end{pmatrix} &= c\begin{pmatrix} 2a_{11} - a_{12} & a_{13} + 2a_{12} \\ 0 & 0 \end{pmatrix} \\
+			\begin{pmatrix} 2ca_{11} - ca_{12} & ca_{13} + 2ca_{12} \\ 0 & 0 \end{pmatrix} &= \begin{pmatrix} 2ca_{11} - ca_{12} & ca_{13} + 2ca_{12} \\ 0 & 0 \end{pmatrix} \\
+		\end{split}
+	\]
+	Thus $T$ is a linear transformation. The nulity of $T$ is 0.
 \end{homeworkProblem}
 
 % Homework problem 3 sec 2.1, prob 9e
 \begin{homeworkProblem}
 	In this exercise, $T:R^2 \rightarrow R^2$ is a function. State why $T$ is not linear.
 	$$T(a_1, a_2) = (a_1 + 1, a_2)$$
+	\[
+		\begin{split}
+			T(2(1, 0)) &= T(2, 0) = (2 + 1, 0) = (3, 0) \\
+			2T(1, 0) &= 2(1 + 1, 0) = 2(2, 0) = (4, 0) \\
+			T(2(1, 0)) &\neq 2T(1, 0)
+		\end{split}
+	\]
+	Thus $T$ is not linear.
 \end{homeworkProblem}
 
 % Homework problem 4 sec 2.1, prob 12
 \begin{homeworkProblem}
 	Is there a linear transformation $T:R^3 \rightarrow R^2$ such that $T(1, 0, 3) = (1,1)$ and $T(-2,0, -6) = (2,1)$?
+	\[
+		\begin{split}
+			T((-2, 0, -6)) = T(-2(1, 0, 3)) = -2T(1, 0, 3) = -2(1, 1) = (-2, -2) \neq (2, 1)
+		\end{split}
+	\]
+	Thus there does not exist a linear transformation
 \end{homeworkProblem}
 
 % Homework problem 5 sec 2.1, prob 13
@@ -182,6 +221,16 @@
 	Let $V$ and $W$ be vector spaces, let $T:V \rightarrow W$ be a linear, and let $\{w_1, w_2,\ldots,w_k\}$
 	be a linearly independent set of $k$ vectors from $R(T)$. Prove that if $S = \{v_1, v_2,\ldots,v_k\}$ is chosen
 	so that $T(v_i) = w_i$ for $i = 1,2,\ldots,k$, then $S$ is linearly independent. Visit goo.gl/kmaQS2 for a solution.
+	\begin{proof}
+		\begin{align*}
+			\text{Asume } \sum_{i=1}^{k} c_iv_i                                         & = 0                               \\
+			\text{Then } T\left(\sum_{i=1}^{k} c_iv_i\right)                            & = T(0)                            \\
+			\text{Since } T \text{ is linear, } \sum_{i=1}^{k} c_iw_i                   & = 0                               \\
+			\text{Since } \{w_1, w_2,\ldots,w_k\} \text{ is linearly independent, } c_i & = 0 \text{ for } i = 1,2,\ldots,k \\
+		\end{align*}
+		Thus $\{v_1, v_2,\ldots,v_k\}$ is linearly independent.
+
+	\end{proof}
 \end{homeworkProblem}
 
 % Homework problem 6 sec 2.2, prob 2c
@@ -190,11 +239,28 @@
 	transformation $T:R^n \rightarrow R^m$, compute $[T]^{\gamma}_{\beta}$.
 	\begin{enumerate}
 		\item $T:R^3 \rightarrow R \text{ defined by } T(a_1, a_2, a_3) = 2a_1 + a_2 - 3a_3 $
+		      \[
+			      \begin{split}
+				      T(1, 0, 0) &= 2(1) + 0 - 3(0) = 2 \\
+				      T(0, 1, 0) &= 2(0) + 1 - 3(0) = 1 \\
+				      T(0, 0, 1) &= 2(0) + 0 - 3(1) = -3 \\
+			      \end{split}
+		      \]
+		      $$[T]^{\gamma}_{\beta} = \begin{pmatrix} 2 \\ 1 \\ -3 \end{pmatrix}$$
 		\item $T:R^n \rightarrow R^n \text{ defined by } T(a_1, a_2, \ldots, a_n) = (a_n, a_{n-1},\ldots,a_1)$
+		      \[
+			      \begin{split}
+				      T(1, 0, \ldots, 0) &= (0, 0, \ldots, 1) \\
+				      T(0, 1, \ldots, 0) &= (0, 0, \ldots, 0) \\
+				      &\vdots \\
+				      T(0, 0, \ldots, 1) &= (1, 0, \ldots, 0) \\
+			      \end{split}
+		      \]
+		      $$[T]^{\gamma}_{\beta} = \begin{pmatrix} 0 & 0 & \ldots & 1 \\ 0 & 0 & \ldots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 1 & 0 & \ldots & 0 \end{pmatrix}$$
 	\end{enumerate}
 \end{homeworkProblem}
 
-% HOmework problem 7 sec 2.2 prob 4
+% Homework problem 7 sec 2.2 prob 4
 \begin{homeworkProblem}
 	Define
 	$$T:M_{2 \times 2}(R) \rightarrow P_2 \text{ by }T \begin{pmatrix}
@@ -202,6 +268,7 @@
 	Let
 	$$ \beta = \left\{ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \right\} \text{ and } \gamma = \{1, x, x^2\}$$
 	Compute $[T]^{\gamma}_{\beta}$.
+	$$[T]^{\gamma}_{\beta} = \begin{pmatrix} 1 & 1 & 0 & 0 \\ 0 & 0 & 0 & 2 \\ 0 & 0 & 1 & 0 \end{pmatrix}$$
 \end{homeworkProblem}
 
 % Homework problem 8 sec 2.2 prob 5d
@@ -209,6 +276,7 @@
 	Let
 	$$\beta = \{1, x, x^2\} \text{ and } \gamma = \{1\}$$
 	Define $T:P_2(R) \rightarrow R^2$ by $T(f(x)) = f(2)$. Compute $[T]^{\gamma}_{\beta}$.
+	$$[T]^{\gamma}_{\beta} = \begin{pmatrix} 1 & 2 & 4 \end{pmatrix}$$
 \end{homeworkProblem}
 
 % Homework problem 9 sec 2.2 prob 14
@@ -229,24 +297,35 @@
 		\[
 			w = T(v_1).
 		\]
-		Thus:
-		\[
-			aT(v_1) + bU(v_1) = 0 \implies aw + bU(v_1) = 0.
-		\]
+		Thus: $aT(v_1) + bU(v_1) = 0 \implies aw + bU(v_1) = 0$.
 	\end{proof}
 \end{homeworkProblem}
 
 % Homework problem 10 sec 2.3 prob 4a
 \begin{homeworkProblem}
 	Calculate the compossition of $$[T(A)]_\alpha, \text{ where } A = \begin{pmatrix} 1 & 4 \\ -1 & 6 \end{pmatrix}$$
-	$$alpha = \left\{ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \right\}$$
+	$$\alpha = \left\{ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \right\}$$
+	\[
+		\begin{split}
+			AB_1 &= \begin{pmatrix} 1 & 0 \\ 2 & 0 \end{pmatrix} \\
+			AB_2 &= \begin{pmatrix} 0 & 1 \\ 0 & 2 \end{pmatrix} \\
+			AB_3 &= \begin{pmatrix} 3 & 0 \\ 4 & 0 \end{pmatrix} \\
+			AB_4 &= \begin{pmatrix} 0 & 3 \\ 0 & 4 \end{pmatrix} \\
+			T[A]_{\alpha} &= \begin{pmatrix} 1 & 0 & 3 & 0 \\ 0 & 1 & 0 & 3 \\ 2 & 0 & 4 & 0 \\ 0 & 2 & 0 & 4 \end{pmatrix}
+		\end{split}
+	\]
 
 \end{homeworkProblem}
 
 % Homework problem 11 sec 2.3 prob 4c
 \begin{homeworkProblem}
-	Calculate the compossition of $$[T(A)]_\gamma, \text{ where } A = \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix}$$
+	Calculate the composition of $$[T(A)]_\gamma, \text{ where } A = \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix}$$
 	$$\gamma = \{1\}$$
+	\[
+		\begin{split}
+			T[A]_{\gamma} &= \begin{pmatrix} 1 \\ 2 \end{pmatrix}
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 12 sec 2.3 prob 9
