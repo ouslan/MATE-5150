@@ -323,6 +323,7 @@
 	$$\gamma = \{1\}$$
 	\[
 		\begin{split}
+			A \times \gamma &= \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix} \times \begin{pmatrix} 1 \\ 0 \end{pmatrix} \\
 			T[A]_{\gamma} &= \begin{pmatrix} 1 \\ 2 \end{pmatrix}
 		\end{split}
 	\]
@@ -333,6 +334,25 @@
 \begin{homeworkProblem}
 	Find linear transformations $U,T:F^2 \rightarrow F^2$ such that $UT = T_0$ (the zero transformation) but $TU \neq T_0$.
 	Use your answer to find matrices $A$ and $B$ such that $AB = 0$ but $BA \neq 0$.
+	\begin{proof}
+		\begin{align*}
+			\intertext{Let $U$ and $T$ be defined as follows:}            \\
+			U(a_1, a_2)  & = (0, a_1) \text{ and } T(a_1, a_2) = (a_1, 0) \\
+			\intertext{Then $UT = T_0$}                                   \\
+			UT(a_1, a_2) & = U(T(a_1, a_2)) = U(a_1, 0) = (0, a_1) = T_0  \\
+			\intertext{But $TU \neq T_0$}                                 \\
+			TU(a_1, a_2) & = T(U(a_1, a_2)) = T(0, a_1) = (0, 0) \neq T_0
+		\end{align*}
+		Thus $AB = 0$ but $BA \neq 0$.
+	\end{proof}
+	Given $A = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}$ and $B = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}$, verify that $AB = 0$ but
+	$BA \neq 0$.
+	\[
+		\begin{split}
+			AB &= \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} \\
+			BA &= \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \\
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 13 sec 2.3 prob 13
@@ -340,6 +360,19 @@
 	Let $A$ and $B$ be $n \times n$ matrices. Recall that the trace of $A$ is defined by
 	$$tr(A) = \sum_{i=1}^{n} a_{ii}$$
 	Prove that $tr(AB) = tr(BA)$ and $tr(A) = tr(A^T)$.
+	\begin{proof}
+		\begin{align*}
+			tr(A)  & = \sum_{i=1}^{n} a_{ii}                                                 \\
+			tr(AB) & = \sum_{i=1}^{n} (AB)_{ii} = \sum_{i=1}^{n} \sum_{j=1}^{n} a_{ij}b_{ji} \\
+			       & = \sum_{j=1}^{n} \sum_{i=1}^{n} b_{ji}a_{ij}                            \\
+			       & = \sum_{j=1}^{n} (BA)_{ii}                                              \\
+			       & = tr(BA)                                                                \\
+			\intertext{Now let $A = (a_{ii})$ and $A^T = (b_{ii})$}                          \\
+			\intertext{Then $a_{ij} = b_{ii}$}                                               \\
+			tr(A)  & = \sum_{i=1}^{n} a_{ii} = \sum_{i=1}^{n} b_{ii} = tr(A^T)
+		\end{align*}
+		Thus $tr(AB) = tr(BA)$ and $tr(A) = tr(A^T)$.
+	\end{proof}
 \end{homeworkProblem}
 
 % Homework problem 14 sec 2.3 prob 17
