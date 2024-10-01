@@ -1,0 +1,16 @@
+---
+title: "database"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+```{python}
+from sympy import *
+```
+
+```{python}
+m = symbols('m')
+d = Matrix([[m], [1]])
+```

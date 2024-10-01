@@ -1,0 +1,206 @@
+
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Asignacion\ \#3}
+\newcommand{\hmwkDueDate}{Septiembre 26, 2024}
+\newcommand{\hmwkClass}{MATE 5150}
+\newcommand{\hmwkClassInstructor}{Dr. Pedro Vasquez}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Homework problem 1 sec 2.4, prob 2b
+\begin{homeworkProblem}
+	Determine whether $T$ is invertible and justify your answer.
+	$$T: \mathbb{R}^2 \rightarrow \mathbb{R}^3, T(a_1, a_2) = (3a_1 - a_2, a_2,4a_1)$$
+\end{homeworkProblem}
+
+% Homework problem 2 sec 2.4, prob 2f
+\begin{homeworkProblem}
+	Determine whether $T$ is invertible and justify your answer.
+	\[
+		T: M_{2 \times 2}(\mathbb{R}) \rightarrow M_{2 \times 2}(\mathbb{R}),
+		T(\begin{bmatrix} a & b \\ c & d \end{bmatrix}) = \begin{bmatrix} a + b & a \\ c & c + d \end{bmatrix}
+	\]
+\end{homeworkProblem}
+
+% Homework problem 3 sec 2.4, prob 3d
+\begin{homeworkProblem}
+	Is the following parirs of vector spaces are isomorphic? Justify your answer.
+	$$V = \{A \in M_{2 \times 2}(\mathbb{R}): tr(A) = 0\} \text{ and } R^4$$
+\end{homeworkProblem}
+
+% Homework problem 4 sec 2.4, prob 14
+\begin{homeworkProblem}
+	Let
+	\[
+		V = \left\{ \begin{bmatrix} a & a+b \\ 0 & c \end{bmatrix} : a, b, c \in F \right\}
+	\]
+	Construct an isomorphism from $V$ to $F^3$.
+\end{homeworkProblem}
+
+% Homework problem 5 sec 2.5, prob 2b
+\begin{homeworkProblem}
+	For each of the following pairs of ordered bases $\beta$ and $\beta'$ for $\mathbb{R}^2$,
+	find the change of coordinates matrix that changes $\beta$-coordinates into $\beta$-coordinate
+	$$ \beta = \{(-1,3), (2,-1)\} \text{ and } \beta' = \{(0,10),(5,0)\}$$
+\end{homeworkProblem}
+
+% Homework problem 6 sec 2.5, prob 3b
+\begin{homeworkProblem}
+	For each of the folloing pairs of ordered bases $\beta$ and $\beta'$ for $P_2(\mathbb{R})$,
+	find the change of coorinate matrix that changs $\beta'$-coordinates into $\beta$-coordinates.
+	$$\beta = \{1,x,x^2\} \text{ and } \beta' = \{a_2x^2 + a_1x + a_0, b_2x^2 + b_1x + b_0, c_2x^2 + c_1x + c_0\}$$
+\end{homeworkProblem}
+
+% Homework problem 7 sec 2.5, prob 4
+\begin{homeworkProblem}
+	Let $T$ be the linear operator on $\mathbb{R}^2$ defined by
+	$$T\begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} 2a + b \\ a - 3b \end{pmatrix}$$
+	let $\beta$ be the standard ordered basis for $\mathbb{R}^2$, and let
+	$$\beta' = \left\{ \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 2 \end{pmatrix} \right\}$$
+	Use Theorem 2.23 and the fact that
+	$$\begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix}^{-1} = \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix}$$
+	To find $[T]_{\beta'}$.
+\end{homeworkProblem}
+
+% Homework problem 8 sec 2.5, prob 6b
+\begin{homeworkProblem}
+	For each matrix $A$ and ordered basis $\beta$, find $[L_A]_{\beta}$. Also, find and
+	invertible matrix $Q$ such that $[L_A]_{\beta} = Q^{-1}AQ$.
+	$$A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \text{ and } \beta = \left\{ \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ -1 \end{pmatrix} \right\}$$
+\end{homeworkProblem}
+
+\end{document}
