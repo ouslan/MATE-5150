@@ -31,6 +31,37 @@
 
 \section{Determine if $T$ is a Vector Space}
 
+\subsection{Conditions}
+\begin{enumerate}
+	\item $x + y  = y + x$
+	\item $x + (y + z) = (x + y) + z$
+	\item $\exists 0 \in V \quad \text{s.t.} \quad x + 0 = x$
+	\item $\exists 0 \in V \quad \text{s.t.} \quad x + y = 0$
+	\item $1x = x$
+	\item $a(bx) = (ab)x$
+	\item $a(x + y) = ax + ay$
+	\item $(a + b)x = ax + bx$
+\end{enumerate}
+
+\subsection{Summery of the Conditions}
+\begin{enumerate}
+	\item $0x = 0$
+	\item $(-a)x = -ax = a(-x)$
+	\item $a0 = 0$
+\end{enumerate}
+\subsection{Example}
+
+Let $S = \{(a_1, a_2): a_1, a_2 \in \R\}$ For $(a_1, a_2), (b_1, b_2) \in S$ and $c \in \R$, define
+\[
+	(a_1, a_2) + (b_1, b_2) = (a_1 + b_1, a_2 - b_2) \quad \text{and} \quad c(a_1, a_2) = (ca_1, ca_2)
+\]
+Property 1: (fails to be a vector space)
+\[
+	\begin{split}
+		(a_1, a_2) + (b_1, b_2) &= (b_1, b_2) + (a_1, a_2) \\
+		(a_1 + b_1, a_2 - b_2) &\neq (b_1 + a_1, b_2 - a_2) \\
+	\end{split}
+\]
 \section{Determine if $T$ is in the Span of $S$}
 
 \section{Proove that the pare of vectors is a basis for vector space $V$}
@@ -40,7 +71,27 @@
 	\item Proove that the set $S$ spans $V$.
 \end{enumerate}
 
-\section{Generate a ppolynomial of Lagrange Interpolation of degree $3$}
+\section{Generate a polynomial of Lagrange Interpolation of degree $3$}
+\[
+	P(x) = \sum_{i=0}^{n} y_i \mathcal{L}_i(x)
+\]
+\[
+	\mathcal{L}_i(x) =
+	\prod_{\substack{0 \leq j \leq n \\ j \neq i}} \frac{x - x_j}{x_i - x_j} =
+	\frac{(x-x_0)\cdots(x-x_i)\cdots(x-x_n)}{(x_i-x_0)\cdots(x_i-x_{i-1})\cdots(x_i-x_n)}
+\]
+
+\subsection{Example for $n = 3$}
+
+$$ \{(x_0, f(x_0)), (x_1, f(x_1)), (x_2, f(x_2)), (x_3, f(x_3))\} $$
+
+\[
+	\begin{split}
+		P(x) &= \frac{(x-x_1)(x-x_2)(x-x_3)}{(x_0-x_1)(x_0-x_2)(x_0-x_3)}f(x_0) + \\
+		&+ \frac{(x-x_0)(x-x_2)(x-x_3)}{(x_1-x_0)(x_1-x_2)(x_1-x_3)}f(x_1) + \\
+		&+ \frac{(x-x_0)(x-x_1)(x-x_3)}{(x_2-x_0)(x_2-x_1)(x_2-x_3)}f(x_2) + \\
+	\end{split}
+\]
 
 \section{Determine if $T$ is bijective}
 
