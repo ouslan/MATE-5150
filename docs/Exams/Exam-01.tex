@@ -64,11 +64,121 @@ Property 1: (fails to be a vector space)
 \]
 \section{Determine if $T$ is in the Span of $S$}
 
-\section{Proove that the pare of vectors is a basis for vector space $V$}
+\subsection{Definition}
 
+\begin{defn}
+	The \textbf{Span} of the set $S$ denoted by $\text{Span}(S)$, is the smallest subspace of $V$
+	that contains $S$. That is,
+	\begin{itemize}
+		\item $\text{Span}(S)$ is a subspace of $V$
+		\item For any subspaces $W \subseteq V$ such that $S \subseteq W \implies \text{Span}(S) \subset W$
+	\end{itemize}
+\end{defn}
+
+\begin{defn}
+	Let $S$ be a subset of a vector space $V$.
+	\begin{itemize}
+		\item If $S = \{v_1, v_2, \ldots, v_n\}$, then $\text{Span}(S)$ is the set of all combinations
+		      $r_1, r_2, \ldots, r_n \in \R$
+		\item If $S$ is an infinite set then $\text{Span}(S)$ is the set of all linear combinations
+		      $r_1v_1 + r_2v_2 + \ldots + r_nv_n$ where $v_1, v_2, \ldots, v_n \in S$ and $r_1, r_2, \ldots, r_n \in \R$, $n \ge 1$
+	\end{itemize}
+\end{defn}
+
+\subsection{Example 1}
+
+Let $v_1 = (1, 2, 0)$, $v_2 = (3,1,1)$, and $w = (4,-7,3)$. Determine whether $w$ belongs to $\text{Span}(v_1, v_2)$.
+\[
+	\begin{split}
+		w &= r_1v_1 + r_2v_2 \\
+		(4,-7,3) &= r_1(1,2,0) + r_2(3,1,1) \\
+		(4,-7,3) &= (r_1 + 3r_2, 2r_1 + r_2, r_2) \\
+	\end{split}
+\]
+\begin{center}
+	\[
+		\begin{split}
+			\begin{cases}
+				4  & = r_1 + 3r_2 \\
+				-7 & = 2r_1 + r_2 \\
+				3  & = 0r_1 + r_2 \\
+			\end{cases} \\
+		\end{split}
+	\]
+\end{center}
+Thus $w = -5v_1 + 3v_2 \in \text{Span}(v_1, v_2)$
+
+\subsection{Example 2}
+
+Let $v_1 = (2,5)$, $v_2 = (1,3)$, show that $\{v_1, v_2\}$ is a $\text{Span}$ for $\R^2$.
+
+Take any vector $W = (a,b) \in \R^2$. We have to chack thatg there exist $r_1, r_2 \in \R$ such that
+\[
+	w = r_1v_1 + r_2v_2 \iff \begin{cases} a = 2r_1 + r_2 \\ b = 5r_1 + 3r_2 \end{cases}
+\]
+
+Coeficients matrix = $\begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}$, $det = 1 \neq 0$. Since the matrix
+is invertible, the system hasx a unique solution for any $a$ and $b$. Thus $\{v_1, v_2\}$ is a $\text{Span}$ for $\R^2$.
+
+\subsection{Example 2 (Alternative)}
+Same as before,
+
+First let us show that vectors $e_1 = (1,0)$ and $e_2 = (0,1)$ are a $\text{Span}(v_1, v_2)$.
+
+\[
+	\begin{split}
+		e_1 &= 2v_1 + v_2 \iff \begin{cases} 1 = 2 r_1 + r_2 \\ 0 = 5r_1 + 3r_2 \end{cases}
+		\iff \begin{cases} r_1 = 3 \\ r_2 = -5 \end{cases} \\
+		e_2 &= v_1 + 3v_2 \iff \begin{cases} 0 = 2r_1 + 3r_2 \\ 1 = 5r_1 + 9r_2 \end{cases}
+		\iff \begin{cases} r_1 = -1 \\ r_2 = 2 \end{cases}
+	\end{split}
+\]
+
+Thus $e_1 = 3v_1 - 5v_2$ and $e_2 = -v_1 + 2v_2$. Then for any $w = (a,b) \in \R^2$ we have
+\[
+	w = ae_1 + be_2 = a(3v_1 - 5v_2) + b(-v_1 + 2v_2) = (3a - b)v_1 + (-5a + 2b)v_2
+\]
+
+\section{Proove that the pair of vectors is a basis for vector space $V$}
+\begin{defn}
+	Let $V$ be a vector space. A  linearly independent set spanning set for $V$ is called a \textbf{basis}.
+\end{defn}
+
+\begin{defn}
+	A set of vectors $S = \{v_1, v_2, \ldots, v_n\}$ is \textbf{linearly independent} if the only solution to the equation
+	\[
+		r_1v_1 + r_2v_2 + \ldots + r_nv_n = 0
+	\]
+	is $r_1 = r_2 = \ldots = r_n = 0$.
+\end{defn}
 \begin{enumerate}
 	\item Proove that the set $S$ is linearly independent.
 	\item Proove that the set $S$ spans $V$.
+\end{enumerate}
+
+\subsection{Example}
+Determine which of the following sets of vectors is a basis for $\R^3$.
+
+\begin{enumerate}
+	\item $S_1 = \{(2,-4,1), (0,3,-1), (6,0,-1)\}$
+	      \[
+		      \begin{split}
+			      r_1(2,-4,1) + r_2(0,3,-1) + r_3(6,0,-1) &= (0,0,0) \\
+			      \begin{cases}
+				      2r_1 + 0r_2 + 6r_3  & = 0 \\
+				      -4r_1 + 3r_2 + 0r_3 & = 0 \\
+				      r_1 - r_2 - r_3     & = 0
+			      \end{cases}
+			      \implies \begin{cases}
+				      r_1 = -3r_3 \\
+				      r_2 = -4r_3 \\
+				      0 = -3r_3 - 4r_3 - r_3
+			      \end{cases}
+		      \end{split}
+	      \]
+	      Thus $S_1$ is not linearly independent and therefore not a basis for $\R^3$, given
+	      that $0 = -3r_1 - 4r_2 + r_3$
+	\item $S_2 = \{(1,-3,-2), (-3,1,3), (-2,-10.-2)\}$
 \end{enumerate}
 
 \section{Generate a polynomial of Lagrange Interpolation of degree $3$}
@@ -104,6 +214,30 @@ $$ \{(x_0, f(x_0)), (x_1, f(x_1)), (x_2, f(x_2)), (x_3, f(x_3))\} $$
 
 \section{Change of Basis}
 
+The strategy is to find the change of basis matrix $P$ such that $[v]_{\beta} = P[v]_{\alpha}$.
+
+\subsection{Example}
+Let $\beta = \{1+ x - x^2, x + x^2, -x + 3x^2\}$ and $\alpha = \{1 + x + x^2, 1 - 2x^2, 4x\}$. and
+let $p(x) \in P_2$ be such that $[p(x)]_{\alpha} = \begin{bmatrix} 3 \\ 2 \\ 1 \end{bmatrix}$. Find
+$[p(x)]_{\beta}$.
+\[
+	\begin{split}
+		[p(x)]_{\alpha} &= 3(1 + x + x^2) + 2(1 - 2x^2) + 1(4x) \\
+		&= 3 + 3x + 3x^2 + 2 - 4x^2 + 4x + 4x \\
+		&= 5 + 5x - x^2 \\
+		[p(x)]_{\beta} &= 5 + 5x - x^2 = c_1(1 + x - x^2) + c_2(x + x^2) + c_3(-x + 3x^2) \\
+		[p(x)]_{\beta} &= \begin{cases}
+			5 = c_1 + 0 + 0     \\
+			5 = c_1 + c_2 - c_3 \\
+			-1 = -c_1 + c_2 + 3c_3
+		\end{cases}  \implies \begin{cases}
+			c_1 = 5 \\
+			c_2 = 1 \\
+			c_3 = 1
+		\end{cases} \\
+		[p(x)]_{\beta} &= \begin{bmatrix} 5 \\ 1 \\ 1 \end{bmatrix}
+	\end{split}
+\]
 \section{Answer of Given Questions}
 
 In $R^2$, let $L$ be the line $y = mx$, where $m \neq 0$. Find an expression for $T(x, y)$, where
@@ -118,4 +252,15 @@ In $R^2$, let $L$ be the line $y = mx$, where $m \neq 0$. Find an expression for
 	\item $T$ is the projection on $L$ along the line perpe qqndicular to $L$. (See the definition of projection in the exercises of Section 2.1.)
 \end{enumerate}
 
+\section{Answer of Given Questions 2}
+
+Let $V$ be a vector space and $S$ a subset of $V$ with the property that whenever $v_1, v_2, \cdots, v_n \in S$ and $a_1 v_1 + a_2 v_2 + \cdots + a_n v_n = 0$,
+then $a_1 = a_2 = \cdots = a_n = 0$. Prove that every vector in the span of $S$ can be uniquely writen as a linear combination of vectors of $S$.
+
+\section{Answer of Given Questions 3}
+The combinattion $W= \{f(x) \in P(F): f(x) = 0 \text{ or } f(x) \text{ is a polynomial of degree n }\}$ is a subspace of $P(F)$ if $n \ge 1$. Justify your answer.
+
+\section{Answer of Given Questions 4}
+Let $T \in L(V, W)$. Since each subspace has a complement, we can write $V = N(T) \oplus N(T)^C$, where $N(T)^C$ is the complement of $N(T)$ in $V$. Show that any
+complement of $N(T)$ is a isomorphic to $R(T)$.
 \end{document}
