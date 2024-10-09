@@ -145,6 +145,7 @@
 \begin{homeworkProblem}
 	Determine whether $T$ is invertible and justify your answer.
 	$$T: \mathbb{R}^2 \rightarrow \mathbb{R}^3, T(a_1, a_2) = (3a_1 - a_2, a_2,4a_1)$$
+	Since the $Rank(\mathbb{R}^3) \neq Dim(\mathbb{R}^2)$, then $T$ is not invertible.
 \end{homeworkProblem}
 
 % Homework problem 2 sec 2.4, prob 2f
@@ -152,37 +153,150 @@
 	Determine whether $T$ is invertible and justify your answer.
 	\[
 		T: M_{2 \times 2}(\mathbb{R}) \rightarrow M_{2 \times 2}(\mathbb{R}),
-		T(\begin{bmatrix} a & b \\ c & d \end{bmatrix}) = \begin{bmatrix} a + b & a \\ c & c + d \end{bmatrix}
+		T\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix}\right) = \begin{bmatrix} a + b & a \\ c & c + d \end{bmatrix}
+	\]
+	\[
+		\begin{split}
+			\text{Check if } T \text{ is linear:} \\
+			T(A + B) &= T\left(\begin{bmatrix} a_1 + a_2 & b_1 + b_2 \\ c_1 + c_2 & d_1 + d_2 \end{bmatrix}\right) \\
+			&= \begin{bmatrix} (a_1 + a_2) + (b_1 + b_2) & (a_1 + a_2) \\ (c_1 + c_2) & (c_1 + c_2) + (d_1 + d_2) \end{bmatrix} \\
+			&= \begin{bmatrix} a_1 + b_1 + a_2 + b_2 & a_1 + a_2 \\ c_1 + c_2 & c_1 + c_2 + d_1 + d_2 \end{bmatrix} \\
+			T(A) + T(B) &= \begin{bmatrix} (a_1 + b_1) + (a_2 + b_2) & a_1 + a_2 \\ c_1 + c_2 & (c_1 + d_1) + (c_2 + d_2) \end{bmatrix} \\
+			&= \begin{bmatrix} a_1 + b_1 + a_2 + b_2 & a_1 + a_2 \\ c_1 + c_2 & c_1 + c_2 + d_1 + d_2 \end{bmatrix} \\
+			&\Rightarrow T(A + B) = T(A) + T(B). \\
+			cT(A): &= c \begin{bmatrix} a_1 + b_1 & a_1 \\ c_1 & c_1 + d_1 \end{bmatrix} \\
+			&= \begin{bmatrix} c(a_1 + b_1) & ca_1 \\ cc_1 & c(c_1 + d_1) \end{bmatrix} \\
+			T(cA) &= T\left(\begin{bmatrix} ca_1 & cb_1 \\ cc_1 & cd_1 \end{bmatrix}\right) \\
+			&= \begin{bmatrix} ca_1 + cb_1 & ca_1 \\ cc_1 & cc_1 + cd_1 \end{bmatrix} \\
+			&\Rightarrow T(cA) = cT(A). \\
+			\text{Find the kernel of } T: \\
+			\ker(T) &= \{ X \in M_{2 \times 2}(\mathbb{R}) : T(X) = 0 \} \\
+			T\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix}\right) &= \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \\
+			&\Rightarrow a + b = 0, a = 0, c = 0, c + d = 0 \\
+			&\Rightarrow a = b = c = d = 0 \\
+			&\Rightarrow \ker(T) = \{ 0 \}. \\
+			\text{Determine the range of } T: \\
+			T\left(\begin{bmatrix} a & b \\ c & d \end{bmatrix}\right) &= \begin{bmatrix} a + b & a \\ c & c + d \end{bmatrix}. \\
+			\text{Let } \begin{bmatrix} x_1 & x_2 \\ y_1 & y_2 \end{bmatrix} \text{ be in the range.} \\
+			x_1 &= a + b, x_2 = a, y_1 = c, y_2 = c + d. \\
+			&\Rightarrow a = x_2, b = x_1 - x_2, c = y_1, d = y_2 - y_1. \\
+		\end{split}
+	\]
+	Therefore, $T$ is invertible.
+\end{homeworkProblem}
+
+
+% Homework problem 3 sec 2.4, prob 3d
+
+\begin{homeworkProblem}
+	Is the following pairs of vector spaces are isomorphic? Justify your answer.
+	$$V = \{A \in M_{2 \times 2}(\mathbb{R}): \text{tr}(A) = 0\} \text{ and } \mathbb{R}^4$$
+	\[
+		\begin{split}
+			\text{Dimension of } \mathbb{R}^4: & \quad \text{The vector space } \mathbb{R}^4 \text{ has dimension } 4. \\[6pt]
+			\text{Dimension of } V: & \quad \text{The space } M_{2 \times 2}(\mathbb{R}) \text{ has dimension } 4. \\
+			& \quad \text{The condition } \text{tr}(A) = 0 \text{ implies } a + d = 0. \\
+			& \quad \text{Thus, a general element in } V \text{ can be written as:} \\
+			& \quad A = \begin{pmatrix} a & b \\ c & -a \end{pmatrix}. \\
+			& \quad \text{The parameters } a, b, c \text{ can be chosen freely, leading to a dimension of } 3. \\[6pt]
+			\text{Comparing dimensions:} & \quad \text{Dimension of } V \text{ is } 3. \\
+			& \quad \text{Dimension of } \mathbb{R}^4 \text{ is } 4. \\
+			& \quad \text{Since the dimensions are different, } V \text{ cannot be isomorphic to } \mathbb{R}^4. \\[6pt]
+			\text{Conclusion:} & \quad \text{The vector spaces } V \text{ and } \mathbb{R}^4 \text{ are not isomorphic.}
+		\end{split}
 	\]
 \end{homeworkProblem}
 
-% Homework problem 3 sec 2.4, prob 3d
-\begin{homeworkProblem}
-	Is the following parirs of vector spaces are isomorphic? Justify your answer.
-	$$V = \{A \in M_{2 \times 2}(\mathbb{R}): tr(A) = 0\} \text{ and } R^4$$
-\end{homeworkProblem}
-
 % Homework problem 4 sec 2.4, prob 14
+
 \begin{homeworkProblem}
 	Let
 	\[
 		V = \left\{ \begin{bmatrix} a & a+b \\ 0 & c \end{bmatrix} : a, b, c \in F \right\}
 	\]
-	Construct an isomorphism from $V$ to $F^3$.
+	Construct an isomorphism from \(V\) to \(F^3\).
+	\[
+		\begin{split}
+			T: V & \to F^3 \\
+			T\left(\begin{bmatrix} a & a+b \\ 0 & c \end{bmatrix}\right) & = (a, b, c) \\
+			\text{To show } T \text{ is linear:} & \\
+			\text{Additivity:} & \\
+			T\left(A + B\right) & = T\left(\begin{bmatrix} a_1 + a_2 & (a_1+b_1) + (a_2+b_2) \\ 0 & c_1 + c_2 \end{bmatrix}\right) = (a_1 + a_2, b_1 + b_2, c_1 + c_2) \\
+			& = T(A) + T(B) \\
+			\text{Scalar multiplication:} & \\
+			T(kA) & = T\left(\begin{bmatrix} ka & k(a+b) \\ 0 & kc \end{bmatrix}\right) = (ka, kb, kc) = k T(A) \\
+			\text{Injectivity:} & \quad T(A) = T(B) \implies A = B \\
+			\text{Surjectivity:} & \quad \forall (a, b, c) \in F^3, \exists \begin{bmatrix} a & a+b \\ 0 & c \end{bmatrix} \in V \\
+			\text{Conclusion:} & \quad T \text{ is an isomorphism.}
+		\end{split}
+	\]
 \end{homeworkProblem}
+
 
 % Homework problem 5 sec 2.5, prob 2b
 \begin{homeworkProblem}
 	For each of the following pairs of ordered bases $\beta$ and $\beta'$ for $\mathbb{R}^2$,
 	find the change of coordinates matrix that changes $\beta$-coordinates into $\beta$-coordinate
 	$$ \beta = \{(-1,3), (2,-1)\} \text{ and } \beta' = \{(0,10),(5,0)\}$$
+	\[
+		\begin{split}
+			\text{Let } \beta &= \{ \mathbf{v_1} = (-1, 3), \mathbf{v_2} = (2, -1) \} \\
+			\text{Let } \beta' &= \{ \mathbf{u_1} = (0, 10), \mathbf{u_2} = (5, 0) \} \\
+			\text{Solve } \mathbf{v_1} &= a_1 \mathbf{u_1} + b_1 \mathbf{u_2} \\
+			(-1, 3) &= a_1(0, 10) + b_1(5, 0) \\
+			5b_1 &= -1 \quad \Rightarrow \quad b_1 = -\frac{1}{5} \\
+			10a_1 &= 3 \quad \Rightarrow \quad a_1 = \frac{3}{10} \\
+			\text{Solve } \mathbf{v_2} &= a_2 \mathbf{u_1} + b_2 \mathbf{u_2} \\
+			(2, -1) &= a_2(0, 10) + b_2(5, 0) \\
+			5b_2 &= 2 \quad \Rightarrow \quad b_2 = \frac{2}{5} \\
+			10a_2 &= -1 \quad \Rightarrow \quad a_2 = -\frac{1}{10} \\
+			\text{Change of coordinates matrix } P &= \begin{pmatrix}
+				a_1 & a_2 \\
+				b_1 & b_2
+			\end{pmatrix} = \begin{pmatrix}
+				\frac{3}{10} & -\frac{1}{10} \\
+				-\frac{1}{5} & \frac{2}{5}
+			\end{pmatrix}
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 6 sec 2.5, prob 3b
 \begin{homeworkProblem}
-	For each of the folloing pairs of ordered bases $\beta$ and $\beta'$ for $P_2(\mathbb{R})$,
-	find the change of coorinate matrix that changs $\beta'$-coordinates into $\beta$-coordinates.
+	For each of the following pairs of ordered bases $\beta$ and $\beta'$ for $P_2(\mathbb{R})$,
+	find the change of coordinate matrix that changes $\beta'$-coordinates into $\beta$-coordinates.
 	$$\beta = \{1,x,x^2\} \text{ and } \beta' = \{a_2x^2 + a_1x + a_0, b_2x^2 + b_1x + b_0, c_2x^2 + c_1x + c_0\}$$
+	\[
+		\begin{split}
+			\text{Let } \beta' = \{ \mathbf{u_1}, \mathbf{u_2}, \mathbf{u_3} \} \\
+			\text{Express } \mathbf{u_1} = a_2 x^2 + a_1 x + a_0 \text{ in terms of } \beta: \\
+			\mathbf{u_1} = a_2 x^2 + a_1 x + a_0 = c_1(1) + c_2(x) + c_3(x^2) \\
+			\text{Coefficients: } \begin{cases}
+				c_1 = a_0 \\
+				c_2 = a_1 \\
+				c_3 = a_2
+			\end{cases} \\
+			\text{Express } \mathbf{u_2} = b_2 x^2 + b_1 x + b_0 \text{ in terms of } \beta: \\
+			\mathbf{u_2} = b_2 x^2 + b_1 x + b_0 = c_1(1) + c_2(x) + c_3(x^2) \\
+			\text{Coefficients: } \begin{cases}
+				c_1 = b_0 \\
+				c_2 = b_1 \\
+				c_3 = b_2
+			\end{cases} \\
+			\text{Express } \mathbf{u_3} &= c_2 x^2 + c_1 x + c_0 \text{ in terms of } \beta: \\
+			\mathbf{u_3} = c_2 x^2 + c_1 x + c_0 = c_1(1) + c_2(x) + c_3(x^2) \\
+			\text{Coefficients: } \begin{cases}
+				c_1 = c_0 \\
+				c_2 = c_1 \\
+				c_3 = c_2
+			\end{cases} \\
+			\text{Change of coordinates matrix } P &= \begin{pmatrix}
+				a_0 & b_0 & c_0 \\
+				a_1 & b_1 & c_1 \\
+				a_2 & b_2 & c_2
+			\end{pmatrix}
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 7 sec 2.5, prob 4
@@ -193,14 +307,69 @@
 	$$\beta' = \left\{ \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 2 \end{pmatrix} \right\}$$
 	Use Theorem 2.23 and the fact that
 	$$\begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix}^{-1} = \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix}$$
-	To find $[T]_{\beta'}$.
+	to find $[T]_{\beta'}$.
+	\[
+		\begin{split}
+			[T]_{\beta} = \begin{pmatrix}
+				2 & 1  \\
+				1 & -3
+			\end{pmatrix} \\
+			\text{Let } P = \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix}, \text{ then } P^{-1} = \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix} \\
+			\text{Use the formula } [T]_{\beta'} = P^{-1}[T]_{\beta}P: \\
+			[T]_{\beta'} &= \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix} \begin{pmatrix}
+				2 & 1  \\
+				1 & -3
+			\end{pmatrix} \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix} \\
+			\text{Calculate } [T]_{\beta}P: \\
+			[T]_{\beta}P &= \begin{pmatrix}
+				2 & 1  \\
+				1 & -3
+			\end{pmatrix} \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix} = \begin{pmatrix}
+				3  & 4  \\
+				-2 & -5
+			\end{pmatrix} \\
+			\text{Calculate } P^{-1}[T]_{\beta}P: \\
+			[T]_{\beta'} = \begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix} \begin{pmatrix}
+				3  & 4  \\
+				-2 & -5
+			\end{pmatrix} \\
+			\begin{pmatrix}
+				2 \cdot 3 + (-1)(-2)      & 2 \cdot 4 + (-1)(-5)      \\
+				-1 \cdot 3 + 1 \cdot (-2) & -1 \cdot 4 + 1 \cdot (-5)
+			\end{pmatrix} = \begin{pmatrix}
+				8  & 13 \\
+				-5 & -9
+			\end{pmatrix} \\
+			\text{Thus, } [T]_{\beta'} = \begin{pmatrix} 8 & 13 \\ -5 & -9 \end{pmatrix}.
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 8 sec 2.5, prob 6b
 \begin{homeworkProblem}
-	For each matrix $A$ and ordered basis $\beta$, find $[L_A]_{\beta}$. Also, find and
+	For each matrix $A$ and ordered basis $\beta$, find $[L_A]_{\beta}$. Also, find an
 	invertible matrix $Q$ such that $[L_A]_{\beta} = Q^{-1}AQ$.
 	$$A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \text{ and } \beta = \left\{ \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ -1 \end{pmatrix} \right\}$$
+	\[
+		\begin{split}
+			\text{Let } \mathbf{v_1} &= \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \quad \mathbf{v_2} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}. \\
+			\text{Compute } A\mathbf{v_1} \text{ and } A\mathbf{v_2}: \\
+			A\mathbf{v_1} = A \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 3 \\ 3 \end{pmatrix} = 3\mathbf{v_1}, \\
+			A\mathbf{v_2} = A \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \begin{pmatrix} 1 - 2 \\ 2 - 1 \end{pmatrix} = \begin{pmatrix} -1 \\ 1 \end{pmatrix} = -\mathbf{v_2}. \\
+			\text{Thus, } [L_A]_{\beta} = \begin{pmatrix} 3 & 0 \\ 0 & -1 \end{pmatrix}. \\
+			\text{To find } Q, \text{ use } Q = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}. \\
+			\text{Now, compute } Q^{-1}: \\
+			Q^{-1} = \frac{1}{\det(Q)} \text{ adj}(Q) = \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} \frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2} \end{pmatrix}. \\
+			\text{Confirm that } [L_A]_{\beta} = Q^{-1}AQ: \\
+			Q^{-1}AQ = \begin{pmatrix} \frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2} \end{pmatrix} \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}. \\
+			\text{Compute } AQ: \\
+			AQ = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} 3 & -1 \\ 1 & 1 \end{pmatrix}. \\
+			\text{Then compute } Q^{-1}AQ: \\
+			= \begin{pmatrix} \frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2} \end{pmatrix} \begin{pmatrix} 3 & -1 \\ 1 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} 3 & 0 \\ 0 & -1 \end{pmatrix}. \\
+			\text{Thus, } [L_A]_{\beta} = \begin{pmatrix} 3 & 0 \\ 0 & -1 \end{pmatrix} \text{ and } Q = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}.
+		\end{split}
+	\]
 \end{homeworkProblem}
+
 
 \end{document}
