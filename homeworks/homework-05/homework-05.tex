@@ -1,0 +1,195 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Asignacion\ \#3}
+\newcommand{\hmwkDueDate}{Septiembre 26, 2024}
+\newcommand{\hmwkClass}{MATE 5150}
+\newcommand{\hmwkClassInstructor}{Dr. Pedro Vasquez}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Homework problem 1 sec 3.1 problem 3b
+\begin{homeworkProblem}
+	Use the proof of Theorem 3.2 to obtain the inverse of each of the following matrices:
+	$$B = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+\end{homeworkProblem}
+
+% Homework problem 2 sec 3.1 problem 6
+\begin{homeworkProblem}
+	Let $A$ be an $m \times n$ matrix. Prove that if $B$ can be obtained from $A$ by an elementary row [column] operation, then $B^T$ can be obtained from $A^T$ by the
+	corresponding elementary column [row] operation.
+\end{homeworkProblem}
+
+% Homework problem 3 sec 3.1 problem 10
+\begin{homeworkProblem}
+	Prove that any elementary row [column] operation of type 2 can be obtained by dividing some row [column] by a nonzero scalar.
+\end{homeworkProblem}
+
+% Homework problem 4 sec 3.2 problem 2g
+\begin{homeworkProblem}
+	Find the rank of the following matrix:
+	$$G = \begin{bmatrix} 1 & 1 & 0 & 1 \\ 2 & 2 & 0 & 2 \\ 1 & 1 & 0 & 0 \\ 1 & 1 & 0 & 1 \end{bmatrix}$$
+\end{homeworkProblem}
+
+% Homework problem 5 sec 3.2 problem 5f
+\begin{homeworkProblem}
+	For each of the following matrices, compute the rank and the inverse if exists:
+	$$ F = \begin{bmatrix} 1 & 2 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 1 \end{bmatrix} $$
+\end{homeworkProblem}
+
+% Homework problem 6 sec 3.2 problem 6b
+\begin{homeworkProblem}
+	For each of the following linear transformations $T$, determine whether $T$ is invertible, and compute $T^{-1}$ if it exists:
+	$$ T = P_2 (\mathbb{R}) \to P_2 (\mathbb{R}) \quad \text{defined by} \quad T(f(x)) = (x+1)f'(x)$$
+\end{homeworkProblem}
+
+% Homework problem 7 sec 3.2 problem 6c
+\begin{homeworkProblem}
+	For each of the following linear transformations $T$, determine whether $T$ is invertible, and compute $T^{-1}$ if it exists:
+	$$ T = \mathbb{R}^3 \to \mathbb{R}^3 \quad \text{defined by} \quad T(a_1, a_2, a_3) = (a_1 + 2a_2 + 3a_3, -a_1 + a_2 + 2a_3, a_1 + a_3)$$
+\end{homeworkProblem}
+
+% Homework problem 8 sec 3.2 problem 14
+\begin{homeworkProblem}
+	Let $T, U: V \to W$ be linear transformations.
+	\begin{itemize}
+		\item Prove that $R(T + U) \subseteq R(T) + R(U)$.
+		\item Prove that if $W$ if finite-dimensional, then $rank(T + U) \leq rank(T) + rank(U)$.
+		\item Deduce from (b) that if $rank(A + B) \leq rank(A) + rank(B)$ for any $m \times n$ matrices $A$ and $B$.
+	\end{itemize}
+\end{homeworkProblem}
+
+
+\end{document}
