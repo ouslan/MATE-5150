@@ -1,0 +1,275 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Asignacion\ \#3}
+\newcommand{\hmwkDueDate}{Septiembre 26, 2024}
+\newcommand{\hmwkClass}{MATE 5150}
+\newcommand{\hmwkClassInstructor}{Dr. Pedro Vasquez}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Homework problem 1 sec 3.3 problem 2g
+\begin{homeworkProblem}
+	For each of the following homogeneous systems of linear equations, find the dimensions of and a basis for the solution space.
+	\[
+		\begin{array}{ll}
+			 & x_1 + 2x_2 + x_3  + x_4 = 0           \\
+			 & \quad \quad \quad x_2 - x_2 + x_3 = 0
+		\end{array}
+	\]
+\end{homeworkProblem}
+
+% Homework problem 2 sec 3.3 problem 3g
+\begin{homeworkProblem}
+	Using the results of Exercise 2, find all solutions to the following system of linear equations.
+	\[
+		\begin{array}{ll}
+			x_1 + 2x_2 + x_3 + x_4 & = 0 \\
+			x_2 - x_2 + x_3        & = 0
+		\end{array}
+	\]
+\end{homeworkProblem}
+
+% Homework problem 3 sec 3.3 problem 6
+\begin{homeworkProblem}
+	Let $T: \mathbb{R}^3 \to \mathbb{R}^2$ be defined by $T(a, b, c) = (a + b, 2a - c)$. Determine $T^{-1}(1, 11)$.
+\end{homeworkProblem}
+
+% Homework problem 4 sec 3.3 problem 7d
+\begin{homeworkProblem}
+	Determine which of the following systems of liner equations has a solution.
+	\[
+		\begin{array}{ll}
+			x_1 + x_2 + 3x_3 - x_3  & = 0 \\
+			x_1 + x_2 + x_3 + x_4   & = 1 \\
+			x_1 - 2x_2 + x_3 - x_4  & = 1 \\
+			4x_1 + x_2 + 8x_3 - x_4 & = 0
+		\end{array}
+	\]
+\end{homeworkProblem}
+
+% Homework problem 5 sec 3.3 problem 12
+\begin{homeworkProblem}
+	A certain economy consists of two sectors: goods and services. Suppose that 60\% of all goods and 30\% of all services are
+	used in the production of goods. What proportion of the total economic output is used in the production of goods?
+\end{homeworkProblem}
+
+% Homework problem 6 sec 3.4 problem 2g
+\begin{homeworkProblem}
+	Use Gaussian elimination to solve the following systems of linear equations.
+	\[
+		\begin{array}{ll}
+			2x_1 - 2x_2 - x_3 + 6x_4 - 2x_5    & = 1 \\
+			\quad x_1 - x_2 + x_3 + 2x_4 - x_5 & = 2 \\
+			4x_1 - 4x_2 + 5x_3 + 7x_4 - x_5    & = 6
+		\end{array}
+	\]
+\end{homeworkProblem}
+
+% Homework problem 7 sec 3.4 problem 5
+\begin{homeworkProblem}
+	Let the reduce row echolon form of $A$ be
+	\[
+		\begin{bmatrix}
+			1 & 0 & 2  & 0 & -2 \\
+			0 & 1 & -5 & 0 & -3 \\
+			0 & 0 & 0  & 1 & 6  \\
+		\end{bmatrix}
+	\]
+	Determine $A$ if the first, second , and forth columns of $A$ are
+	\[
+		\begin{bmatrix}
+			1  \\
+			-1 \\
+			3  \\
+		\end{bmatrix},
+		\begin{bmatrix}
+			0  \\
+			-1 \\
+			1  \\
+		\end{bmatrix}, \text{ and }
+		\begin{bmatrix}
+			1  \\
+			-2 \\
+			0
+		\end{bmatrix}
+	\]
+\end{homeworkProblem}
+
+% Homework problem 8 sec 3.4 problem 9
+\begin{homeworkProblem}
+	Let $W$ be the subspace of $M_{2 \times 2} (\mathbb{R})$ consisting of the symmetric $2 \times 2$ matrices. Then set
+	\[
+		S = \left\{
+		\begin{bmatrix}
+			0  & -1 \\
+			-1 & 1
+		\end{bmatrix},
+		\begin{bmatrix}
+			1 & 2 \\
+			2 & 3 \\
+		\end{bmatrix},
+		\begin{bmatrix}
+			2 & 1 \\
+			1 & 9
+		\end{bmatrix},
+		\begin{bmatrix}
+			1  & -2 \\
+			-2 & 4
+		\end{bmatrix},
+		\begin{bmatrix}
+			-1 & -2 \\
+			2  & -1
+		\end{bmatrix}\right\}
+	\]
+	generates $W$. Find a subset of $S$ that is a basis for $W$.
+\end{homeworkProblem}
+
+% Homework problem 9 sec 3.4 problem 13
+\begin{homeworkProblem}
+	Let $V$ be a in Exercise 12\
+	\[
+		\begin{array}{ll}
+			x_1 - x_2 + 2x_4 - 3x_5 + x_6         & = 0 \\
+			2x_1 - x_2 - x_3 + 3x_4 - 4x_5 + 4x_6 & = 0 \\
+		\end{array}
+	\]
+	\begin{enumerate}
+		\item Show that $S = \left\{(0,1,0,1,1,0), (0,2,1,1,0,0)\right\}$ is a linerly independent subset of $V$.
+		\item Extend $S$ to a basis for $V$.
+	\end{enumerate}
+\end{homeworkProblem}
+
+\end{document}
