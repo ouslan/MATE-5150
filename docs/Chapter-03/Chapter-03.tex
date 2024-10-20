@@ -31,8 +31,8 @@
 
 \section{Elementary Matrix Operations and Elementary Matrices}
 
-In this section, we difine the elementary operations that are used throughout the chapter. In subsequent sections, we use these
-operations to obtrain simiple computational methods for determining the rank of a linear transformation and the solution of a
+In this section, we define the elementary operations that are used throughout the chapter. In subsequent sections, we use these
+operations to obtain simple computational methods for determining the rank of a linear transformation and the solution of a
 system of linear equations. There are two types of elementary operations -row operations and column operations. As we will see,
 the row operations are more useful. They arise from the three operations that can be used to eliminate variables in a system of linear equations.
 
@@ -47,11 +47,11 @@ the row operations are more useful. They arise from the three operations that ca
 \end{defn}
 
 Any of these three operations is called an \textbf{elementary operation}. Elementary operations are of \textbf{type 1}, \textbf{type 2}, or \textbf{type 3} depending on
-wheather they are obtained by (1), (2), or (3) above.
+weather they are obtained by (1), (2), or (3) above.
 
 \begin{defn}
-	An $n \times n$ \textbf{elementary matrix} is a matrix obtained by performing an elementary operations on $I_n$. The elemetnary matrix is said to be of \textbf{type 1}, \textbf{type 2}, or \textbf{type 3}
-	acording to wheather the elementary operation performed on $I_n$ is of type 1, type 2, or type 3.
+	An $n \times n$ \textbf{elementary matrix} is a matrix obtained by performing an elementary operations on $I_n$. The elementary matrix is said to be of \textbf{type 1}, \textbf{type 2}, or \textbf{type 3}
+	according to weather the elementary operation performed on $I_n$ is of type 1, type 2, or type 3.
 \end{defn}
 
 \subsubsection{Example Elementary Matrices}
@@ -85,7 +85,7 @@ Find an elementary operation that transforms $A$ into $B$ and an elementary oper
 \end{proof}
 
 \subsubsection{Example}
-Use the proog in Theroem 1 to obtain the inverse of each of the folowing elementary matrices:
+Use the proof in Theorem 1 to obtain the inverse of each of the following elementary matrices:
 \[
 	A = \begin{bmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad
 	B = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad
@@ -102,7 +102,7 @@ Finding the inverse of each of the elementary matrices in the example above, we 
 
 \subsection{Matrix Multiplication and Elementary Matrices}
 
-Let $A$ be an $m \times n$ matrix. Prove that if $E$ can be otained from $A$ by an elementary row [column] operation, then $B^T$ can be obtained from $A^T$ by the corresponding elementary column [row] operation.
+Let $A$ be an $m \times n$ matrix. Prove that if $E$ can be obtained from $A$ by an elementary row [column] operation, then $B^T$ can be obtained from $A^T$ by the corresponding elementary column [row] operation.
 
 \begin{proof}
 	\begin{align*}
@@ -114,15 +114,15 @@ Let $A$ be an $m \times n$ matrix. Prove that if $E$ can be otained from $A$ by 
 
 \section{The Rank of a Matrix and Matrix Inverses}
 
-In this section, we define the \textit{rank} of a matrix. We then use lementary operations to compute the rank of a marix and a lineear transformation. The section concludes with
-a procedure for compuing the inverse of an invertible matrix.
+In this section, we define the \textit{rank} of a matrix. We then use elementary operations to compute the rank of a matrix and a linear transformation. The section concludes with
+a procedure for comping the inverse of an invertible matrix.
 
 \begin{defn}
-	If $A \in M_{m \times n(F)}$, We defin the \textbf{rank} of $A$, denoted $rank(A)$, to be the rank of the linear transformation $L_A: F^n \to F^m$.
+	If $A \in M_{m \times n(F)}$, We define the \textbf{rank} of $A$, denoted $rank(A)$, to be the rank of the linear transformation $L_A: F^n \to F^m$.
 \end{defn}
 
-Every matrix $A$ is the matrix representation of the linear transformation $L_A$ with repect to the appropriate standard ordere bases. Thuse the rank of the linear tgransformation $L_A$
-is the same as the rank of one of its matrrix representations, namely, $A$. The next theorem ectends this fact to aqny matrix representation of any linear transformation fedined on finite-dimensional
+Every matrix $A$ is the matrix representation of the linear transformation $L_A$ with reject to the appropriate standard ordure bases. These the rank of the linear transformation $L_A$
+is the same as the rank of one of its matrix representations, namely, $A$. The next theorem extends this fact to any matrix representation of any linear transformation defined on finite-dimensional
 vector spaces.
 
 \begin{thm}
@@ -139,15 +139,25 @@ vector spaces.
 	\end{enumerate}
 \end{thm}
 
+\begin{proof}
+	\begin{align*}
+		R(L_{AQ}) & = R(L_A L_Q)    \\
+		          & = L_A(L_Q(F^n)) \\
+		          & = L_A(F^n)      \\
+		          & = R(L_A)
+	\end{align*}
+	Since $L_A$ is onto, then $rank(AQ) = dim(R(L_{AQ})) = dim(R(L_A)) = rank(A)$
+\end{proof}
+
 \begin{cor}
-	Elemenary row and column operations on a matrix are rnak-preserving.
+	Elementary row and column operations on a matrix are rank-preserving.
 \end{cor}
 
-Now that we have a class of matrix operations that perserve rank, we need a way of examining a transformed matrix to ascertain its rank. The next theorem
+Now that we have a class of matrix operations that preserve rank, we need a way of examining a transformed matrix to ascertain its rank. The next theorem
 is the first of several in this direction.
 
 \begin{thm}
-	The rank of any matrix equals the maximum number of its linearly indipendcent columns; that is the rnaak of a matreix is the dimension of the subspace generated by its columns.
+	The rank of any matrix equals the maximum number of its linearly independicen columns; that is the rank of a matrix is the dimension of the subspace generated by its columns.
 \end{thm}
 
 \subsubsection{Example}
@@ -155,14 +165,22 @@ Find the rank of the following matrix:
 \[
 	A = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 1 & 1 & 0 \end{bmatrix}, \quad B = \begin{bmatrix} 1 & 1 & 0 \\ 2 & 1 & 1 \\ 1 & 1 & 1 \end{bmatrix}
 \]
-
+Since $A$ can be represented as $a_2 = a_1 + a_3$, then $rank(A) = 2$. Since $B$ all of its columns are linearly independent, then $rank(B) = 3$.
 \subsubsection{Example}
 Prove that for any $m \times n$ matrix $A$, $rank(A) = 0$ if and only if $A$ is the zero matrix.
 
-The next theorem uses this process to transform a matrix into a particularly simple form. The power of this theorem can be seen in its corallaries.
+\begin{proof}
+	\begin{align*}
+		\intertext{The zero matrix has rank 0 because it has no linearly independent columns.}
+		\intertext{Conversely, suppose that $rank(A) = 0$. Then the columns of $A$ are linearly dependent.}
+	\end{align*}
+	Therefore, $A$ has to be the zero matrix.
+\end{proof}
+
+The next theorem uses this process to transform a matrix into a particularly simple form. The power of this theorem can be seen in its corollaries.
 
 \begin{thm}
-	Let $A$ be an $m \times n$ matrix of rank $r$. Then $r \leq m$ , $r \leq n$, and by means of a finit number of elementary row and column operations, $A$ can be transformed into the matrix
+	Let $A$ be an $m \times n$ matrix of rank $r$. Then $r \leq m$ , $r \leq n$, and by means of a finite number of elementary row and column operations, $A$ can be transformed into the matrix
 	\[
 		D = \begin{bmatrix} I_r & O_1 \\ O_2 & O_3 \end{bmatrix}
 	\]
@@ -192,8 +210,13 @@ The next theorem uses this process to transform a matrix into a particularly sim
 
 \begin{proof}
 	\begin{align*}
-		d
+		\intertext{If $A$ is an invertible matrix, then $rank(A) = n$.}
+		\intertext{Hence the matrix $D$ in corollary 2, $D = I_n$.}
+		\intertext{Then was mutible matrix $B$ and $C$ such that $D = BAC$.}
+		\intertext{By corollary 1, note that $B = E_pE_{p-1} \ldots E_1$ and $C = F_qF_{q-1} \ldots F_1$}
+		\intertext{Therefore, $A = B^{-1}D(C^{-1})^{-1} = E_1E_2 \ldots E_pF_1F_2 \ldots F_q$}
 	\end{align*}
+	Therefore, every invertible matrix is a product of elementary matrices.
 \end{proof}
 
 \begin{thm}
@@ -207,11 +230,21 @@ The next theorem uses this process to transform a matrix into a particularly sim
 	\end{enumerate}
 \end{thm}
 
+\begin{proof}
+	\begin{align*}
+		\intertext{Clearly, $R(T) \subseteq W$}
+		R(UT) = U(T(V)) = U(R(T)) \subseteq U(W) = R(U)
+	\end{align*}
+	Therefore, $rank(UT) = dim(R(UT)) \leq dim(R(U)) = rank(U)$
+\end{proof}
+
 \subsubsection{Example}
-Use elementary row and column operations to transform each of the following matrices into a matrix $D$ satisfying the condfitions of Theorem 5, and then detemine the rank of each matrix:
+Use elementary row and column operations to transform each of the following matrices into a matrix $D$ satisfying the conditions of Theorem 5, and then determine the rank of each matrix:
 \[
 	A = \begin{bmatrix} 1 & 1 & 1 & 2 \\ 2 & 0 & -1 & 2 \\ 1 & 1 & 1 & 2 \end{bmatrix} \quad , \quad B = \begin{bmatrix} 2 & 1 \\ -1 & 2 \\ 2 & 1 \end{bmatrix}
 \]
+
+
 
 \subsubsection{Example}
 For each of the following linear transformation $T$, determine wheather $T$ is invertible, and compute $T^{-1}$ if it exists:
@@ -222,10 +255,20 @@ Let $T: \R^3 \to \R^3$ be defined by
 	T(a_1, a_2, a_3) = (a_1 + 2a_2 + a_3, -a_1 + a_2 + 2a_3, a_1 + a_3)
 \]
 
+\[
+	\begin{split}
+		[T]_{\beta} &= \begin{bmatrix} 1 & 2 & 1 \\ -1 & 1 & 2 \\ 1 & 0 & 1 \end{bmatrix} \\
+		Rank([T]_{\beta}) &= 3 \\
+		[T]_{\beta}^{-1} &= \begin{bmatrix} \frac{1}{6}  & -\frac{1}{3} & \frac{1}{2}  \\
+                \frac{1}{2}  & 0            & -\frac{1}{2} \\
+                -\frac{1}{6} & \frac{1}{3}  & \frac{1}{2}\end{bmatrix} \\
+		T^{-1}(a_1, a_2, a_3) &= (\frac{1}{6}a_1 - \frac{1}{3}a_2 + \frac{1}{2}a_3, \frac{1}{2}a_1 - \frac{1}{2}a_3, -\frac{1}{6}a_1 + \frac{1}{3}a_2 + \frac{1}{2}a_3)
+	\end{split}
+\]
 
 \subsection{The inverse of a Matrix}
 We have remarked that an $n \times n$ matrix is invertible if and only if its rank is $n$. Since we know how to compute the rank of any matrix, we can always test a matrix
-to dermine wheather its is invertible, We now provide a simple techinque for computing the inverse of a matrix that utilizes elementrary row operations.
+to termine weather its is invertible, We now provide a simple technique for computing the inverse of a matrix that utilizes elementary row operations.
 
 \begin{thm}
 	Let $A$ and $B$ be $m \times n$ and $m \times p$ matrices, respectively. By the \textbf{augmented matrix} $[A|B]$, we mean the $m \times (n + p)$ matrix, that is, the matrix whose first $n$ columns are
@@ -242,4 +285,80 @@ Express the invertible matrix
 	A = \begin{bmatrix} 1 & 2 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 2 \end{bmatrix}
 \]
 As a product of elementary matrices.
+
+\[
+	\begin{split}
+		A = A E_1 E_2 E_3  \\
+		A^{-1} = E_3 E_2 E_1
+	\end{split}
+\]
+
+\section{Systems of Linear Equations - Theoretical Aspects}
+
+\subsection{Systems of Linear Equations}
+The system of equations
+\[
+	\begin{array}{ll}
+		a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n & = b_1 \\
+		a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n & = b_2 \\
+		\multicolumn{2}{c}{\vdots}                         \\
+		a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n & = b_m
+	\end{array}
+\]
+Where $a_{ij}$ and $b_i$ $(1 \leq i \leq m, 1 \leq j \leq n)$ are scalars in a field $F$, and $x_1, x_2, \ldots, x_n$ are $n$ variables taking values in $F$, is called a
+\textbf{system of $m$ linear equations in $n$ unknowns over the field $F$.} The matrix
+\[
+	A = \begin{bmatrix} a_{11} & a_{12} & \ldots & a_{1n} \\ a_{21} & a_{22} & \ldots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \ldots & a_{mn} \end{bmatrix}
+\]
+Is called the \textbf{coefficient matrix} of the system, and the matrix. If we let
+\[
+	X = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \quad \text{and} \quad B = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_m \end{bmatrix}
+\]
+then the system $S$ may be rewritten as a single matrix equation $AX = B$. To exploit the results that we have developed, we often consider a system of linear equations as a
+single matrix equation. A solution to the system $S$ is an $n$-tuple
+\[
+	\begin{bmatrix} s_1 \\ s_2 \\ \vdots \\ s_n \end{bmatrix} \in F^n
+\]
+such that $AS = B$. The set of all solutions to the system $S$ is called the \textbf{solution set} of the system. System $S$ is called \textbf{consistent} if its solution set is nonempty; otherwise
+it is called inconsistent.
+
+\subsection{Homogeneous Systems of Linear Equations}
+
+We begin our sturcdy of systems of linear equations by examining the class of \textbf{homogeneous systems} of linear equations. Our first result shows that the set of solutions to a homogeneours system of $B$ linear
+equations in $n$ unknows form a subspacce of $F^n$. We can then apply the theory of vector spaces to this set of solutions. For example, a basis for the solution space can be found, and any solution can be expressed as
+a linear compination of the vector in the basis.
+
+\begin{defn}
+	A system $Ax = b$ of $b$ linear equations in $b$ unknowns is said to be \textbf{homogeneous} if $b = 0$. Otherwise, the system is said to be \textbf{nonhomogeneous}.
+\end{defn}
+
+Any homogeneous system has at least one solution, namely the zero vector. The result gives further information babout the set of solutions to a homogeneours system.
+
+\begin{thm}
+	Let $Ax = 0$ be a homogeneous system of $m$ linear equations in $n$ unknowns over a field $F$. Let $K$ denote the set of all solutions to $Ax = 0$. Then $K = Nul(L_A)$, hence $K$ is a subspace of $F^n$
+	of dimension $n - rank(A)$.
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		K = \{s \in F^n | As = 0\} = Nul(L_A)
+	\end{align*}
+\end{proof}
+
+\begin{cor}
+	If $m < n$, the system $Ax = 0$ has a nontrivial solution.
+\end{cor}
+
+\subsubsection{Example}
+
+For each of the following homogeneous systems of linear equations, find the dimensions of and a basis for the solution space.
+\[
+	\begin{array}{ll}
+		 & x_1 + 2x_2 - x_3 = 0 \\
+		 & 2x_1 + x_2 + x_3 = 0
+	\end{array}
+\]
+
+
+
 \end{document}
