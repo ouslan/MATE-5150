@@ -500,4 +500,80 @@ Ingeneral we must find a nonnegative solution to $(I - A)x = d$, where $A$ is a 
 see that if $(I - A)^{-1}$ exists and is nonnegative, then the desired solution is $(I - A)^{-1}d$.
 
 
+\section{Systems of Linear Equations - Computational Aspects}
+
+In section 3.3, we obtained a necessary and sufficient condition for a system of linear equations to have solutions and learned how to express the solutions to a nonhomogenous system in terms of solutions
+to the corresponding homogenous system. The latter result enables us to determine all the solutions to a give nsystem if we can find one solution to the given system and a basis for the solution set
+of the corresponding homogenous system. In this section, we use elementary row operations to accomplish these two objective simultaneously. The essence of this technique is to transfomr a give nssytem
+of linear equations into a system having the same solution, but whic his easier to solve
+
+\begin{defn}
+	Two systems of linear equations are called \textbf{equivalent} if they have the same solution set.
+\end{defn}
+
+\begin{thm}
+	Let $Ax = b$ be a system of $b$ linear equations in $n$ unknowns, and let $C$ be an invertible $m \times m$ matrix. Then the system $(CA)x = Cb$ is equivalent to $Ax = b$.
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		d
+	\end{align*}
+\end{proof}
+
+\begin{cor}
+	Let $Ax = b$ be a system of $m$ linear equations in $n$ unknowns. If $(A'|b')$ is obtained from $(A|b)$ by a finite number of elementary row operations, then the system $A'x = b'$ is equivalent to $Ax = b$.
+\end{cor}
+
+by using elementary row operations, we transform the augmented matrix into an upper triangular matrix in which the first nonzero entry of each row is $1$, and it occurs in a column to the right of the first
+nonzerto entry of eac hproceding row. (Recall that amatrix $A$ is upper triangular if $A_{ij} = 0$ whenever $i > j$.)
+
+\subsubsection{Example}
+Use elementary row operations to transform each of the following systems of linear equations into an equivalent system in triangular form, and then solve the system:
+
+\[
+	\begin{array}{ll}
+		x_1 + 2x_2 - x_3   & = -1 \\
+		2x_1 + 2x_2 + x_3  & = 1  \\
+		3x_1 + 5x_2 - 2x_3 & = 2
+	\end{array}
+\]
+
+\[
+	\begin{split}
+		\begin{bmatrix} 1 & 2 & -1 & -1 \\ 2 & 2 & 1 & 1 \\ 3 & 5 & -2 & 2 \end{bmatrix} \rightarrow \begin{bmatrix} 1 & 2 & -1 & -1 \\ 0 & -2 & 3 & 3 \\ 0 & -1 & 1 & 2 \end{bmatrix} \\
+	\end{split}
+\]
+
+\begin{defn}
+	A matrix is said to be in \textbf{reduced row echelon form} if the following three conditions are satisfied.
+
+	\begin{enumerate}
+		\item any row contaioning a nonzero entry precedes any row in whic all the entriesx are zxero (if any).
+		\item The first nonzero entry in each row is the onl;y nonzero entry in tits column
+		\item The firs nonzero entry in each row is $1$ and it occurs un a column to the right of the firs nonzero entry in the preceding row.
+	\end{enumerate}
+\end{defn}
+
+The procedure described previously for reducing an augmented matrix is called \textbf{Gaussiaan elimination} it consits of two seperates parts:
+
+\begin{enumerate}
+	\item In the foward pass, (septsx 1-5) the augmented amtrix is transformed into a nupper triangular matrix in whic hthe first nonxero entry of eac hrow is 1, and it occurs in a column to the right of
+	      the first nonzero entry of each row.
+	\item In the backward pass or back-subsitution (steps 6-7), the upper triangualr matrix is transformed into reduced row echolon form by making the first nonzero entry of each row the only nonzer
+	      entry of its column
+\end{enumerate}
+
+\begin{thm}
+	Gaussian elimation transformas any matrix into its reduced row echelon form.p
+\end{thm}
+
+\[
+	\begin{array}{ll}
+		x_1 + 2x_2 - x_3 + 3x_4                        & = 2 \\
+		2x_1 + 4x_1 - x_3 + 6x_4                       & = 5 \\
+		\quad \quad \quad x_2 \quad \quad \quad + 2x_4 & = 3
+	\end{array}
+\]
+
 \end{document}
