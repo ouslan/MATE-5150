@@ -359,6 +359,145 @@ For each of the following homogeneous systems of linear equations, find the dime
 	\end{array}
 \]
 
+\[
+	\begin{split}
+		A = \begin{bmatrix} 1 & 2 & -1 \\ 2 & 1 & 1 \end{bmatrix} \quad , \quad rank(A) = 2 \\
+		Nul(L_A) = \{s \in \R^3 | As = 0\} = \{s \in \R^3 | s = x_3 \begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix}\} \\
+		\text{Therefore, the dimension of the solution space is 1 and a basis for the solution space is} \{ \begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix} \}
+	\end{split}
+\]
+
+\begin{thm}
+	Let $K$ be the solution set of a system of linear equations $Ax = b$, and let $K_H$ be the solution set of the corresponding homogeneous system $Ax = 0$. Then for any solution $s$ to $Ax = b$:
+	$$ K = s + K_H = \{ s + h | h \in K_H \} $$
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		\intertext{Suppose that $w \in \{s\} + K_H$}
+		\intertext{Then $w = s + h$ for some $h \in K_H$}
+		\intertext{Since $Aw = A(s + h) = As + Ak =  b + 0 = b$}
+	\end{align*}
+	Therefore, $w \in K \implies \{s\} + K_H \subseteq K$
+\end{proof}
+
+\subsubsection{Example}
+Using the results of Exercise 2, find all solutions to the following system of linear equations:
+\[
+	\begin{array}{ll}
+		x_1 + 2x_2 - x_3 & = 3 \\
+		2x_1 + x_2 + x_3 & = 6
+	\end{array}
+\]
+
+\[
+	\begin{split}
+		\begin{bmatrix} 1 & 2 & -1 & 3 \\ 2 & 1 & 1 & 6 \end{bmatrix} \rightarrow \begin{bmatrix} 1 & 0 & 1 & 3 \\ 0 & 1 & -1 & 0 \end{bmatrix}
+		x_1 = 3 - x_3 \\
+		x_2 = x_3 \\
+		Solution = (3 - x_3, x_3, x_3)^T \\
+		K = \{ \begin{bmatrix} 3 \\ 0 \\ 0 \end{bmatrix} + t \begin{bmatrix} -1 \\ 1 \\ 1 \end{bmatrix} | t \in F \}
+	\end{split}
+\]
+
+\begin{thm}
+	Let $Ax = b$ be a system of $n$ linear equations in $n$ unknowns. If $A$ is invertible, then the system has a unique solution, namely, $A^{-1}b$. Conversely, if the system has exactly one solution, then $A$ is
+	invertible.
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		\intertext{suppose that $A$ is invertible and substitute $A^{-1}b$ into the system $Ax = b$}
+		\intertext{Then $AA^{-1}b = b \implies b = I_n b = b \implies A^{-1}b \text{ is a solution to the system}$}
+		\intertext{Conversely, suppose that the system has exactly one solution. Then $Ax = b$ has a unique solution $s$.}
+		\intertext{Then $s = A^{-1}b$}
+		\intertext{Therefore, $A$ is invertible}
+	\end{align*}
+\end{proof}
+
+\subsubsection{Example}
+For each of the following systems of linear equations with invertible coefficient matrices, $A$,
+\begin{itemize}
+	\item Compute $A^{-1}$.
+	\item Use $A^{-1}$ to find the unique solution to the system.
+\end{itemize}
+\begin{enumerate}
+	\item $\begin{array}{ll}
+			      x_1 + 3x_2  & = 2 \\
+			      2x_1 + 5x_2 & = 3
+		      \end{array}$
+	\item $\begin{array}{ll}
+			      x_1 + 2x_2 - x_3  & = 5 \\
+			      x_1 + x_2 + x_3   & = 1 \\
+			      2x_1 - 2x_2 + x_3 & = 4
+		      \end{array}$
+\end{enumerate}
+
+\[
+	\begin{split}
+		A = \begin{bmatrix} 1 & 3 \\ 2 & 5 \end{bmatrix} \quad , \quad A^{-1} = -\frac{1}{5} \begin{bmatrix} 1 & -3 \\ -2 & 1 \end{bmatrix} \\
+		\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = A^{-1} \begin{bmatrix} 2 \\ 3 \end{bmatrix} \\
+		\begin{bmatrix} 1 & -3 \\ -2 & 1 \end{bmatrix} \begin{bmatrix} 4 \\ 3 \end{bmatrix} = \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+	\end{split}
+\]
+
+\[
+	\begin{split}
+		B = \begin{bmatrix} 1 & 2 & -1 \\ 1 & 1 & 1 \\ 2 & -2 & 1 \end{bmatrix} \quad , \quad B^{-1} = \begin{bmatrix}
+			\frac{2}{3}  & 0           & \frac{1}{3}  \\
+			\frac{1}{9}  & \frac{1}{3} & -\frac{2}{9} \\
+			-\frac{4}{9} & \frac{2}{3} & -\frac{1}{9}
+		\end{bmatrix} \\
+		\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = B^{-1} \begin{bmatrix} 5 \\ 1 \\ 4 \end{bmatrix} \\
+		\begin{bmatrix} \frac{2}{3}  & 0           & \frac{1}{3}  \\
+                \frac{1}{9}  & \frac{1}{3} & -\frac{2}{9} \\
+                -\frac{4}{9} & \frac{2}{3} & -\frac{1}{9}\end{bmatrix} \begin{bmatrix} 5 \\ 1 \\ 4 \end{bmatrix} = \begin{bmatrix} 3 \\ 0 \\ -2 \end{bmatrix}
+	\end{split}
+\]
+
+This citerion involves the rank of the coefficient matrix of the system $Ax = b$ and the rank of the matrix $(A|b)$. The matrix $(A|b)$ is called the augmented matrix of the system $Ax = b$.
+
+\begin{thm}
+	Let $Ax = b$ be a system of $m$ linear equations. Then the syste mis consistent if and only if $rank(A) = rank(A|b)$.
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		\intertext{Let say that the system $Ax = b$ has a solution equvalent that $b \in R(L_A)$}
+		\intertext{Then $R(L_A) = span\{b\} = R(L_{(A|b)})$}
+		\intertext{Then $Ax = b$ has a soution iff $b \in span\{a_1, a_2, \ldots, a_n\}$}
+		\intertext{iff $span\{a_1, a_2, \ldots, a_n, b\} = span\{a_1, a_2, \ldots, a_n\}$}
+		\intertext{iff $rank(A|b) = rank(A)$}
+	\end{align*}
+\end{proof}
+
+\subsubsection{Example}
+Determine which of the following systems of linear equations has a solution
+\[
+	\begin{array}{ll}
+		x_1 + x_2 - x_3 + 2x_4  & = 2 \\
+		x_1 + x_2 + 2x_3 \quad  & = 1 \\
+		2x_1 + x_2 + x_3 + 2x_4 & = 4
+	\end{array}
+\]
+
+\subsection{Aplications}
+A is called a \textbf{input-output (or consumprion) matrix} and $Ap = p$ is called the equlibrium condition. For vectors $b = (b_1, b_2, \ldots, b_n)$ and $c = (c_1, c_2, \ldots, c_n)$ in $R^n$, we
+use the notion $b \leq c$ to mean that $b_i \leq c_i$ for all $i$. The vector $b$ is called \textbf{nonnegative [popsitive]} if $b_i \geq 0$ [$b_i > 0$].
+
+\begin{thm}
+	Let $A$ be an $n \times n$ input-output matrix having the form
+	\[
+		A = \begin{bmatrix}
+			B & C \\
+			D & E
+		\end{bmatrix}
+	\]
+	Where  $D$ is a $1 \times (n - 1)$ positive vector and $C$ is an $(n - 1) \times 1$ positive vecvtor. Then $(I - A)x = O$ has a one-dimensional solution set that is generated by a nonnegative vector.
+\end{thm}
+
+Ingeneral we must find a nonnegative solution to $(I - A)x = d$, where $A$ is a matrix with nonnegative entries such that the sum of the entries of each column of $A$ does not exceed one, and $d \geq 0$.It is easy to
+see that if $(I - A)^{-1}$ exists and is nonnegative, then the desired solution is $(I - A)^{-1}d$.
 
 
 \end{document}
