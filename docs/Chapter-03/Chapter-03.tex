@@ -570,10 +570,58 @@ The procedure described previously for reducing an augmented matrix is called \t
 
 \[
 	\begin{array}{ll}
-		x_1 + 2x_2 - x_3 + 3x_4                        & = 2 \\
-		2x_1 + 4x_1 - x_3 + 6x_4                       & = 5 \\
-		\quad \quad \quad x_2 \quad \quad \quad + 2x_4 & = 3
+		x_1 + 2x_2 - x_3 + 3x_4                   & = 2 \\
+		2x_1 + 4x_1 - x_3 + 6x_4                  & = 5 \\
+		\quad \quad \quad x_2 \quad \quad  + 2x_4 & = 3
 	\end{array}
 \]
+
+\[
+	\begin{array}{ll}
+		x_1 + x_2  -3x_2 + x_4            & = 2 \\
+		x_1 + x_2 + x_3 - x_4             & = 2 \\
+		x_1 + x_2 - x_3 \quad \quad \quad & = 0
+	\end{array}
+\]
+
+\begin{thm}
+	Let $Ax = b$ be a system of $r$ nonzero equations in $n$ unknowns. Suppose that $rank(A) = rank(A|b)$ and that $(A|b)$ is in reduced row echelon form. Then
+	\begin{enumerate}
+		\item $rank(A) = r$
+		\item If the general solution obtrained by the procedure above is of the form
+		      \[
+			      s = s_0 + t_1 u_1 + t_2 u_2 + \ldots + t_{n-r} u_{n-r}
+		      \]
+	\end{enumerate}
+	the $\{u_1, u_2, \ldots, u_{n-r}\}$ is a basis for the solution set of the corresponding homogeneous system, and $s_0$ is a solution to the original system.
+\end{thm}
+
+\subsection{An interpretation of the reduced row echelon form}
+
+Let $A$ be an $m \times n$ matrix with columns $a_1, a_2, \ldots, a_n$, and let $B$ be the reduced row echelon form of $A$. Denote the columns of $B$ by $b_1, b_2, \ldots, b_n$. If the rank of $A$ is
+$r$, then the rank of $B$ is also $r$ by the corollary to Theorem 3.4. Because $B$ is in reduced row echelon form, no nonzero row of $B$ can be a linear combination of the other rows of $B$. Hence $B$
+must have exactly $r$ nonzero rows, and if $r \leq 1$, the vectors $e_1, e_2, \ldots, e_r$ must occure among the columns of $B$. For $i = 1, 2, \ldots, r$, let $j_i$ denote a collumn number of $B$ such
+that $b_{j_i} = e_i$. We claim that $\{a_{j_1}, a_{j_2}, \ldots, a_{j_r}\}$, the columns of $A$ corresponding to these columns of $B$, are linearly independent. For suppose that there are scalars $c_1, c_2, \ldots, c_r$
+such that $c_1a_{j_1} + c_2a_{j_2} + \ldots + c_ra_{j_r} = 0$.
+
+\begin{thm}
+	Let $A$ be an $m \times n$ matrix of rank $r$. Where $r \geq 0$, and let $B$ be the reduce row echelon form of $A$. Then
+	\begin{enumerate}
+		\item The number of nonzero row in $B$ is $r$.
+		\item For each $i = 1, 2, \ldots, r$, there is a column $b_{j_i}$ of $B$ such that $b_{j_i} = e_i$.
+		\item The columns of $A$ numbered $j_1, j_2, \ldots, j_r$ are linearly independent.
+		\item for each $k = 1, 2, \ldots, n$, if column $k$ of $B$ is $d_1e_1 + d_2e_2 + \ldots + d_re_r$, then culumn $k$ of $A$ is $d_1a_{j_1} + d_2a_{j_2} + \ldots + d_ra_{j_r}$.
+	\end{enumerate}
+\end{thm}
+
+\subsubsection{Example}
+Let
+\[
+	V = \{ (x_1, x_2, x_3, x_4, x_5) \in \R^5 | x_1 - 2x_2 + 3x_3 - x_4 + 2x_5 = 0 \}
+\]
+\begin{enumerate}
+	\item Show that $S = \{ (0,1,1,1,0) \}$ is a linearly independent subset of $V$.
+	\item Extend $S$ to a basis for $V$.
+\end{enumerate}
 
 \end{document}
