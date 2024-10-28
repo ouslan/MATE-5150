@@ -86,12 +86,54 @@
 	Therefore, $\det(A^T) = \det(A)$.
 \end{proof}
 
-\begin{thm}
+\begin{thm}[Cramer's Rule]
 	Let $Ax = b$ be the matrix form of a system of $n$ linear equations in $n$ unknowns. Where $x = (x_1, x_2, \ldots, x_n)^T$. If $\det(A) \neq 0$, then this system has a unique solution, and
 	for each $k$ $(k = 1, 2, \ldots, n)$,
 	$$ x_k = \frac{\det(M_k)}{\det(A)} $$
 	where $M_k$ is the $n \times n$ matrix obtained from $A$ by replacing column $k$ of $A$ by $b$.
 \end{thm}
+
+\begin{proof}
+	Let \( X_k \) be the matrix obtained from \( A \) by replacing the \( k \)-th column of \( A \) with the vector \( \mathbf{b} \). Then we can write the system as:
+
+	\[
+		A X_k = M_k
+	\]
+
+	where \( M_k \) is the vector formed by the coefficients of the system in the new configuration.
+
+	To evaluate \( \det(X_k) \) using cofactor expansion along the \( k \)-th column, we have:
+
+	\[
+		\det(X_k) = x_k \det(I_{n-1})
+	\]
+
+	Since \( \det(I_{n-1}) = 1 \), it follows that:
+
+	\[
+		\det(X_k) = x_k
+	\]
+
+	By applying the property of determinants, we obtain:
+
+	\[
+		\det(M_k) = \det(A X_k) = \det(A) \cdot \det(X_k)
+	\]
+
+	Substituting \( \det(X_k) \) into this equation gives:
+
+	\[
+		\det(M_k) = \det(A) \cdot x_k
+	\]
+
+	Therefore, we can rearrange this to find \( x_k \):
+
+	\[
+		x_k = \frac{\det(M_k)}{\det(A)}
+	\]
+
+	This proves Cramer's Rule for the variable \( x_k \).
+\end{proof}
 \section{Summary - Important Facts about Determinants}
 
 \end{document}
