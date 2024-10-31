@@ -146,9 +146,38 @@
 	\[
 		\begin{array}{ll}
 			 & x_1 + 2x_2 + x_3  + x_4 = 0           \\
-			 & \quad \quad \quad x_2 - x_2 + x_3 = 0
+			 & \quad \quad \quad x_2 - x_3 + x_3 = 0
 		\end{array}
 	\]
+	\[
+		\begin{split}
+			\begin{bmatrix}
+				1 & 2 & 1  & 1 & 0 \\
+				0 & 1 & -1 & 1 & 0
+			\end{bmatrix} \\
+			x_2 &= x_3 - x_4 \\
+			x_1 &= -x_3 - x_4 \\
+			\begin{bmatrix}
+				x_1 \\
+				x_2 \\
+				x_3 \\
+				x_4 \\
+			\end{bmatrix} &=
+			\begin{bmatrix}
+				-1 \\
+				1  \\
+				1  \\
+				0  \\
+			\end{bmatrix}x_3 +
+			\begin{bmatrix}
+				-1 \\
+				-1 \\
+				0  \\
+				1  \\
+			\end{bmatrix}x_4 \\
+		\end{split}
+	\]
+	The rank of the matrix is 2, and dimension of the solution space is 2. A basis for the solution space is $\left\{(1, 1, 1, 0), (1, -1, 0, 1)\right\}$.
 \end{homeworkProblem}
 
 % Homework problem 2 sec 3.3 problem 3g
@@ -157,14 +186,39 @@
 	\[
 		\begin{array}{ll}
 			x_1 + 2x_2 + x_3 + x_4 & = 0 \\
-			x_2 - x_2 + x_3        & = 0
+			x_2 - x_3 + x_3        & = 0
 		\end{array}
+	\]
+	\[
+		\begin{split}
+			K = \left\{t_1\begin{bmatrix}
+				-1 \\
+				1  \\
+				1  \\
+				0  \\
+			\end{bmatrix} + t_2
+			\begin{bmatrix}
+				-1 \\
+				-1 \\
+				0  \\
+				1  \\
+			\end{bmatrix} : t_1, t_2 \in \mathbb{R}\right\}
+		\end{split}
 	\]
 \end{homeworkProblem}
 
 % Homework problem 3 sec 3.3 problem 6
 \begin{homeworkProblem}
 	Let $T: \mathbb{R}^3 \to \mathbb{R}^2$ be defined by $T(a, b, c) = (a + b, 2a - c)$. Determine $T^{-1}(1, 11)$.
+	\[
+		\begin{split}
+			T(a, b, c) &= (a + b, 2a - c) \\
+			1 = a + b & \quad 11 = 2a - c \\
+			b = 1 - a & \quad c = 2a - 11 \\
+			(a, b, c) &= (a, 1 - a, 2a - 11) \\
+			T^{-1}(1, 11) &= \left\{(a,1 - a, 2a - 11) : a \in \mathbb{R}\right\}
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 4 sec 3.3 problem 7d
@@ -178,12 +232,45 @@
 			4x_1 + x_2 + 8x_3 - x_4 & = 0
 		\end{array}
 	\]
+	\[
+		\begin{split}
+			A &= \begin{bmatrix}
+				1 & 1  & 3 & -1 & 0 \\
+				1 & 1  & 1 & 1  & 1 \\
+				1 & -2 & 1 & -1 & 1 \\
+				4 & 1  & 8 & -1 & 0
+			\end{bmatrix} = \begin{bmatrix}
+				1 & 0 & 0 & 0 & \frac{25}{6}  \\
+				0 & 1 & 0 & 0 & \frac{4}{3}   \\
+				0 & 0 & 1 & 0 & - \frac{5}{2} \\
+				0 & 0 & 0 & 1 & -2            \\
+			\end{bmatrix} \\
+			s &= \begin{bmatrix}
+				x_1 \\
+				x_2 \\
+				x_3 \\
+				x_4 \\
+			\end{bmatrix} = \begin{bmatrix}
+				\frac{25}{6} \\
+				\frac{4}{3}  \\
+				-\frac{5}{2} \\
+				-2           \\
+			\end{bmatrix}
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 5 sec 3.3 problem 12
 \begin{homeworkProblem}
-	A certain economy consists of two sectors: goods and services. Suppose that 60\% of all goods and 30\% of all services are
+	u	A certain economy consists of two sectors: goods and services. Suppose that 60\% of all goods and 30\% of all services are
 	used in the production of goods. What proportion of the total economic output is used in the production of goods?
+
+	\[
+		\begin{split}
+			P &= \frac{.6G + .3S}{G + S}  = \frac{.6G + .3S}{T_2} \\
+			P &= \frac{.9G}{T_2}           = .45, \text{ where } G = 1, S = 1, T_2 = 2 \\
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 6 sec 3.4 problem 2g
@@ -195,6 +282,16 @@
 			\quad x_1 - x_2 + x_3 + 2x_4 - x_5 & = 2 \\
 			4x_1 - 4x_2 + 5x_3 + 7x_4 - x_5    & = 6
 		\end{array}
+	\]
+
+	\[
+		\begin{split}
+			A = \begin{bmatrix}
+				2 & -2 & -1 & 6 & -2 & 1 \\
+				1 & -1 & 1  & 2 & -1 & 2 \\
+				4 & -4 & 5  & 7 & -1 & 6 \\
+			\end{bmatrix}
+		\end{split}
 	\]
 \end{homeworkProblem}
 
