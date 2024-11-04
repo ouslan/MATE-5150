@@ -290,7 +290,19 @@
 				2 & -2 & -1 & 6 & -2 & 1 \\
 				1 & -1 & 1  & 2 & -1 & 2 \\
 				4 & -4 & 5  & 7 & -1 & 6 \\
-			\end{bmatrix}
+			\end{bmatrix} \\
+			\begin{bmatrix}
+				1 & -1 & 0 & 0 & 23 & -23 \\
+				0 & 0  & 1 & 0 & -6 & 7   \\
+				0 & 0  & 0 & 1 & -9 & 9   \\
+			\end{bmatrix} \\
+			S = \begin{bmatrix}
+				x_2 - 23x_5 - 23 \\
+				x_2              \\
+				6x_5 + 7         \\
+				9x_5 + 9         \\
+				x_5              \\
+			\end{bmatrix} \\
 		\end{split}
 	\]
 \end{homeworkProblem}
@@ -352,11 +364,52 @@
 		\end{bmatrix}\right\}
 	\]
 	generates $W$. Find a subset of $S$ that is a basis for $W$.
+
+	\[
+		\begin{split}
+			A_1 = \begin{bmatrix} 0 & -1 \\ -1 & 1 \end{bmatrix}, \\
+			A_2 = \begin{bmatrix} 1 & 2 \\ 2 & 3 \end{bmatrix}, \\
+			A_3 = \begin{bmatrix} 2 & 1 \\ 1 & 9 \end{bmatrix}, \\
+			A_4 = \begin{bmatrix} 1 & -2 \\ -2 & 4 \end{bmatrix}, \\
+			A_5 = \begin{bmatrix} -1 & -2 \\ 2 & -1 \end{bmatrix}. \\
+			M = \begin{bmatrix}
+				0  & 1 & 2 & 1  & -1 \\
+				-1 & 2 & 1 & -2 & -2 \\
+				1  & 3 & 9 & 4  & -1
+			\end{bmatrix}. \\
+			1. R_2 \leftarrow R_2 - 2R_1, \quad R_3 \leftarrow R_3 - 1R_1 \\
+			\Rightarrow M \sim \begin{bmatrix}
+				0  & 1 & 2  & 1  & -1 \\
+				-1 & 0 & -3 & -4 & 1  \\
+				1  & 3 & 9  & 4  & -1
+			\end{bmatrix}. \\
+			\Rightarrow \begin{bmatrix}
+				-1 & 0 & -3 & -4 & 1  \\
+				0  & 1 & 2  & 1  & -1 \\
+				1  & 3 & 9  & 4  & -1
+			\end{bmatrix}. \\
+			3. R_1 \leftarrow -R_1 \text{ and then } R_3 \leftarrow R_3 + R_1 \\
+			\Rightarrow \begin{bmatrix}
+				1 & 0 & 3  & 4 & -1 \\
+				0 & 1 & 2  & 1 & -1 \\
+				0 & 3 & 12 & 8 & 0
+			\end{bmatrix}. \\
+			4. R_3 \leftarrow R_3 - 3R_2 \\
+			\Rightarrow \begin{bmatrix}
+				1 & 0 & 3 & 4 & -1 \\
+				0 & 1 & 2 & 1 & -1 \\
+				0 & 0 & 6 & 5 & 3
+			\end{bmatrix}. \\
+			\text{This shows there are 3 non-zero rows, hence } \text{dimension of span} = 3. \\
+			\text{Thus, a basis for } W \text{ is } \left\{
+			A_1, A_2, A_3 \right\}.
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 9 sec 3.4 problem 13
 \begin{homeworkProblem}
-	Let $V$ be a in Exercise 12\
+	Let $V$ be a in Exercise 12
 	\[
 		\begin{array}{ll}
 			x_1 - x_2 + 2x_4 - 3x_5 + x_6         & = 0 \\
