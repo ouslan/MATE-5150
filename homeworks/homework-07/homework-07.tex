@@ -142,38 +142,103 @@
 
 % Homework problem 1 sec 4.1 problem 3b
 \begin{homeworkProblem}
+	Compute the determinants of the following matrices in $M_{2x2}(C)$.
+	\[
+		\begin{bmatrix}
+			2i & 3  \\
+			4  & 6i
+		\end{bmatrix}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 2 sec 4.1 problem 12
 \begin{homeworkProblem}
+	The classical adjoint of a $2x2$ matrix $A \in M_{2x2}(F)$ is the matrix
+	\[
+		C = \begin{bmatrix}
+			A_{22}  & -A_{12} \\
+			-A_{21} & A_{11}
+		\end{bmatrix}
+	\]
+	Prove that
+	\begin{itemize}
+		\item $C A = A C = [det(A)]I$
+		\item $det(C) = det(A)$
+		\item The classical adjoint of $A^T$ is $C^T$
+		\item If $A$ is invertible, then $A^{-1} = [det(A)]^{-1}C$
+	\end{itemize}
 \end{homeworkProblem}
 
 % Homework problem 3 sec 4.2 problem 4
 \begin{homeworkProblem}
+	\[
+		det \begin{bmatrix}
+			b_1 + c_1 & b_2 + c_2 & b_3 + c_3 \\
+			a_1 + c_1 & a_2 + c_2 & a_3 + c_3 \\
+			a_1 + b_1 & a_2 + b_2 & a_3 + b_3 \\
+		\end{bmatrix} = k \cdot det \begin{bmatrix}
+			a_1 & a_2 & a_3 \\
+			b_1 & b_2 & b_3 \\
+			c_1 & c_2 & c_3 \\
+		\end{bmatrix}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 4 sec 4.2 problem 12
 \begin{homeworkProblem}
+	Evaluate the determinant of the given matrix by cofactor expansion along the indicated row.
+	\[
+		\begin{bmatrix}
+			1  & -1 & 2  & -1 \\
+			-3 & 4  & 1  & -1 \\
+			2  & -5 & -3 & 8  \\
+			-2 & 6  & -4 & 1  \\
+		\end{bmatrix}
+	\]
+	along the fourth row.
 \end{homeworkProblem}
 
 % Homework problem 5 sec 4.2 problem 28
 \begin{homeworkProblem}
+	Compute $det(E_i)$ if $E_i$ is an elementary matrix of type $i$.
 \end{homeworkProblem}
 
 % Homework problem 6 sec 4.3 problem 5
 \begin{homeworkProblem}
+	Use Cramer's rule to solve the given system of linear equations.
+	\[
+		\begin{aligned}
+			x_1 - x_2 + 4x_3   & = -4 \\
+			-8x_1 + 3x_2 + x_3 & = 8  \\
+			2x_1 + x_2 + x_3   & = 0
+		\end{aligned}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 7 sec 4.3 problem 10
 \begin{homeworkProblem}
+	A matrix $M \in M_{nxn}(F)$ is called nipotent if, some positive interrger $k$, $M^k = 0$, where $0$ is the $n x n$ zero matrix. Prove that if $M$ is nilpotent, then $det(M) = 0$.
 \end{homeworkProblem}
 
 % Homework problem 8 sec 4.3 problem 16
 \begin{homeworkProblem}
+	Use determinants to prove that if $A,B \in M_{nxn}(F)$ are sucht that $AB = I$, then $A$ is invertible (and hence $B = A^{-1}$).
 \end{homeworkProblem}
 
 % Homework problem 9 sec 4.3 problem 24
 \begin{homeworkProblem}
+	Let $A \in M_{nxn}(F)$ have the form
+	\[
+		A = \begin{bmatrix}
+			0      & 0      & 0      & \cdots & 0      & a_{0}   \\
+			-1     & 0      & 0      & \cdots & 0      & a_{1}   \\
+			0      & -1     & 0      & \cdots & 0      & a_{2}   \\
+			\vdots & \vdots & \vdots & \ddots & \vdots & \vdots  \\
+			0      & 0      & 0      & \cdots & -1     & a_{n-1}
+		\end{bmatrix}
+	\]
+
+	Compute $det(A + tI)$ where $I$ is the $n x n$ identity matrix.
 \end{homeworkProblem}
 
 % Homework problem 10 sec 4.4 Section 4.4 problem 4th
