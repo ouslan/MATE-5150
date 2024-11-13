@@ -149,14 +149,14 @@
 			4  & 6i
 		\end{bmatrix}
 	\]
-  \[
-    \begin{split}
-      |C| &= 2i \cdot 6i - 3 \cdot 4 \\
-      |C| &= 12i^2 - 12 \\
-      |C| &= -12 - 12 \\
-      |C| &= -24
-    \end{split}
-  \]
+	\[
+		\begin{split}
+			|C| & = 2i \cdot 6i - 3 \cdot 4 \\
+			|C| & = 12i^2 - 12              \\
+			|C| & = -12 - 12                \\
+			|C| & = -24
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 2 sec 4.1 problem 12
@@ -171,76 +171,76 @@
 	Prove that
 	\begin{itemize}
 		\item $C A = A C = [det(A)]I$
-      \[
-        \begin{split}
-          CA &= \begin{bmatrix}
-            A_{22}  & -A_{12} \\
-            -A_{21} & A_{11}
-          \end{bmatrix}
-          \begin{bmatrix}
-            A_{11} & A_{12} \\
-            A_{21} & A_{22}
-          \end{bmatrix} = \begin{bmatrix}
-            A_{22}A_{11} - A_{12}A_{21} & 0 \\
-            0 & -A_{21}A_{12} + A_{11}A_{22}
-          \end{bmatrix} \\
-          AC &= \begin{bmatrix}
-            A_{11} & A_{12} \\
-            A_{21} & A_{22}
-          \end{bmatrix}
-          \begin{bmatrix}
-            A_{22}  & -A_{12} \\
-            -A_{21} & A_{11}
-          \end{bmatrix} = \begin{bmatrix}
-            A_{11}A_{22} - A_{12}A_{21} & 0 \\
-            0 & -A_{21}A_{12} + A_{11}A_{22}
-          \end{bmatrix} \\
-          \det(A) &= (A_{22}A_{11} - A_{12}A_{21}) \cdot (-A_{21}A_{12} + A_{11}A_{22}) \\
-           \det(A) I &= \begin{bmatrix}
-            A_{22}A_{11} - A_{12}A_{21} & 0 \\
-            0 & -A_{21}A_{12} + A_{11}A_{22}
-          \end{bmatrix}
-          \end{split}
-        \]
+		      \[
+			      \begin{split}
+				      CA        & = \begin{bmatrix}
+					                    A_{22}  & -A_{12} \\
+					                    -A_{21} & A_{11}
+				                    \end{bmatrix}
+				      \begin{bmatrix}
+					      A_{11} & A_{12} \\
+					      A_{21} & A_{22}
+				      \end{bmatrix} = \begin{bmatrix}
+					                      A_{22}A_{11} - A_{12}A_{21} & 0                            \\
+					                      0                           & -A_{21}A_{12} + A_{11}A_{22}
+				                      \end{bmatrix}       \\
+				      AC        & = \begin{bmatrix}
+					                    A_{11} & A_{12} \\
+					                    A_{21} & A_{22}
+				                    \end{bmatrix}
+				      \begin{bmatrix}
+					      A_{22}  & -A_{12} \\
+					      -A_{21} & A_{11}
+				      \end{bmatrix} = \begin{bmatrix}
+					                      A_{11}A_{22} - A_{12}A_{21} & 0                            \\
+					                      0                           & -A_{21}A_{12} + A_{11}A_{22}
+				                      \end{bmatrix}       \\
+				      \det(A)   & = (A_{22}A_{11} - A_{12}A_{21}) \cdot (-A_{21}A_{12} + A_{11}A_{22}) \\
+				      \det(A) I & = \begin{bmatrix}
+					                    A_{22}A_{11} - A_{12}A_{21} & 0                            \\
+					                    0                           & -A_{21}A_{12} + A_{11}A_{22}
+				                    \end{bmatrix}
+			      \end{split}
+		      \]
 		\item $det(C) = det(A)$
-      \[
-        \begin{split}
-          det(C) &= A_{22}A_{11} - A_{12}A_{21} \\
-          det(A) &= A_{11}A_{22} - A_{12}A_{21}
-        \end{split}
-      \]
+		      \[
+			      \begin{split}
+				      det(C) & = A_{22}A_{11} - A_{12}A_{21} \\
+				      det(A) & = A_{11}A_{22} - A_{12}A_{21}
+			      \end{split}
+		      \]
 		\item The classical adjoint of $A^T$ is $C^T$
-      \[
-        \begin{split}
-          A^T &= \begin{bmatrix}
-            A_{11} & A_{21} \\
-            A_{12} & A_{22}
-          \end{bmatrix} \\
-          C^T &= \begin{bmatrix}
-            A_{22}  & -A_{21} \\
-            -A_{12} & A_{11}
-          \end{bmatrix}
-        \end{split}
-      \]
+		      \[
+			      \begin{split}
+				      A^T & = \begin{bmatrix}
+					              A_{11} & A_{21} \\
+					              A_{12} & A_{22}
+				              \end{bmatrix}   \\
+				      C^T & = \begin{bmatrix}
+					              A_{22}  & -A_{21} \\
+					              -A_{12} & A_{11}
+				              \end{bmatrix}
+			      \end{split}
+		      \]
 		\item If $A$ is invertible, then $A^{-1} = [det(A)]^{-1}C$
-      \[
-        \begin{split}
-          A^{-1} &= \frac{1}{det(A)} \begin{bmatrix}
-            A_{22}  & -A_{12} \\
-            -A_{21} & A_{11}
-          \end{bmatrix} \\
-          A^{-1} &= \begin{bmatrix}
-            \frac{A_{22}}{det(A)}  & \frac{-A_{12}}{det(A)} \\
-            \frac{-A_{21}}{det(A)} & \frac{A_{11}}{det(A)}
-          \end{bmatrix}
-        \end{split}
-      \]
+		      \[
+			      \begin{split}
+				      A^{-1} & = \frac{1}{det(A)} \begin{bmatrix}
+					                                  A_{22}  & -A_{12} \\
+					                                  -A_{21} & A_{11}
+				                                  \end{bmatrix}                                      \\
+				      A^{-1} & = \begin{bmatrix}
+					                 \frac{A_{22}}{det(A)}  & \frac{-A_{12}}{det(A)} \\
+					                 \frac{-A_{21}}{det(A)} & \frac{A_{11}}{det(A)}
+				                 \end{bmatrix}
+			      \end{split}
+		      \]
 	\end{itemize}
 \end{homeworkProblem}
 
 % Homework problem 3 sec 4.2 problem 4
 \begin{homeworkProblem}
-  Find the value of $k$ such that satisfies the following equation.
+	Find the value of $k$ such that satisfies the following equation.
 	\[
 		det \begin{bmatrix}
 			b_1 + c_1 & b_2 + c_2 & b_3 + c_3 \\
@@ -252,15 +252,21 @@
 			c_1 & c_2 & c_3 \\
 		\end{bmatrix}
 	\]
-  \[
-    \begin{split}
-    		det \begin{bmatrix}
-			b_1 + c_1 & b_2 + c_2 & b_3 + c_3 \\
-			a_1 + c_1 & a_2 + c_2 & a_3 + c_3 \\
-			a_1 + b_1 & a_2 + b_2 & a_3 + b_3 \\
-		\end{bmatrix} = 
-    \end{split}
-  \]
+	\[
+		\begin{split}
+			det \begin{bmatrix}
+				    b_1 + c_1 & b_2 + c_2 & b_3 + c_3 \\
+				    a_1 + c_1 & a_2 + c_2 & a_3 + c_3 \\
+				    a_1 + b_1 & a_2 + b_2 & a_3 + b_3 \\
+			    \end{bmatrix} = 2a_1b_2c_3 + 2a_2b_3c_1 + 2a_3b_1c_2 - 2a_3b_2c_1 - 2a_2b_1c_3 - 2a_1b_3c_2 \\
+			det \begin{bmatrix}
+				    a_1 & a_2 & a_3 \\
+				    b_1 & b_2 & b_3 \\
+				    c_1 & c_2 & c_3 \\
+			    \end{bmatrix} = a_1b_2c_3 + a_2b_3c_1 + a_3b_1c_2 - a_3b_2c_1 - a_2b_1c_3 - a_1b_3c_2       \\
+			k = 2
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 4 sec 4.2 problem 12
@@ -275,11 +281,94 @@
 		\end{bmatrix}
 	\]
 	along the fourth row.
+	\[
+		\begin{split}
+			(-1)^{4+1} \cdot -2 \cdot \begin{vmatrix}
+				                          -1 & 2  & -1 \\
+				                          4  & 1  & -1 \\
+				                          -5 & -3 & 8
+			                          \end{vmatrix} +
+			(-1)^{4+2} \cdot 6 \cdot \begin{vmatrix}
+				                         1  & 2  & -1 \\
+				                         -3 & 1  & -1 \\
+				                         2  & -3 & 8
+			                         \end{vmatrix}                                                                                                          \\
+			+ (-1)^{4+3} \cdot -4 \cdot \begin{vmatrix}
+				                            1  & -1 & 2  \\
+				                            -3 & 4  & 1  \\
+				                            2  & -5 & -3
+			                            \end{vmatrix} + (-1)^{4+4} \cdot 1 \cdot \begin{vmatrix}
+				                                                                     1  & -1 & 2  \\
+				                                                                     -3 & 4  & 1  \\
+				                                                                     2  & -5 & -3
+			                                                                     \end{vmatrix}                                                              \\
+			2 \cdot \left((-1)^{1+1} \cdot -1 \cdot \begin{vmatrix}
+				                                        1  & -1 \\
+				                                        -3 & 4
+			                                        \end{vmatrix} + (-1)^{1+2} \cdot 2 \cdot \begin{vmatrix}
+				                                                                                 4  & -1 \\
+				                                                                                 -5 & 8
+			                                                                                 \end{vmatrix} + (-1)^{1+3} \cdot -1 \cdot \begin{vmatrix}
+				                                                                                                                           4  & 1  \\
+				                                                                                                                           -5 & -3
+			                                                                                                                           \end{vmatrix}\right)  \\
+			+ 6 \cdot \left((-1)^{2+1} \cdot 1 \cdot \begin{vmatrix}
+				                                         -3 & 1  \\
+				                                         2  & -3
+			                                         \end{vmatrix} + (-1)^{2+2} \cdot 2 \cdot \begin{vmatrix}
+				                                                                                  1 & -1 \\
+				                                                                                  2 & 8
+			                                                                                  \end{vmatrix} + (-1)^{2+3} \cdot -1 \cdot \begin{vmatrix}
+				                                                                                                                            1 & -1 \\
+				                                                                                                                            2 & -5
+			                                                                                                                            \end{vmatrix}\right) \\
+			-4 \cdot \left((-1)^{3+1} \cdot 1 \cdot \begin{vmatrix}
+				                                        -3 & 4  \\
+				                                        -5 & -3
+			                                        \end{vmatrix} + (-1)^{3+2} \cdot 2 \cdot \begin{vmatrix}
+				                                                                                 1 & 4  \\
+				                                                                                 2 & -3
+			                                                                                 \end{vmatrix} + (-1)^{3+3} \cdot -1 \cdot \begin{vmatrix}
+				                                                                                                                           1 & -1 \\
+				                                                                                                                           2 & -5
+			                                                                                                                           \end{vmatrix}\right)  \\
+			+ 1 \cdot \left((-1)^{4+1} \cdot 1 \cdot \begin{vmatrix}
+				                                         -3 & 4  \\
+				                                         -5 & -3
+			                                         \end{vmatrix} + (-1)^{4+2} \cdot 2 \cdot \begin{vmatrix}
+				                                                                                  1 & 4  \\
+				                                                                                  2 & -3
+			                                                                                  \end{vmatrix} + (-1)^{4+3} \cdot -1 \cdot \begin{vmatrix}
+				                                                                                                                            1 & -1 \\
+				                                                                                                                            2 & -5
+			                                                                                                                            \end{vmatrix}\right) \\
+			2((-1)^{1+1} \cdot -1 \cdot (4 - 3) + (-1)^{1+2} \cdot 2 \cdot (4 + 15) + (-1)^{1+3} \cdot -1 \cdot (-12 - 5))                                   \\
+			+ 6((-1)^{2+1} \cdot 1 \cdot (-9 + 2) + (-1)^{2+2} \cdot 2 \cdot (-3 - 16) + (-1)^{2+3} \cdot -1 \cdot (-8 - 2))                                 \\
+			- 4((-1)^{3+1} \cdot 1 \cdot (-9 + 20) + (-1)^{3+2} \cdot 2 \cdot (-3 - 8) + (-1)^{3+3} \cdot -1 \cdot (-4 - 10))                                \\
+			+ 1((-1)^{4+1} \cdot 1 \cdot (-27 + 20) + (-1)^{4+2} \cdot 2 \cdot (-3 - 8) + (-1)^{4+3} \cdot -1 \cdot (-4 + 10))                               \\
+			154
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 5 sec 4.2 problem 28
 \begin{homeworkProblem}
 	Compute $det(E_i)$ if $E_i$ is an elementary matrix of type $i$.
+	\begin{itemize}
+		\item $E_1$ is obtained by interchanging two rows of $I_n$.
+		      \[
+			      det(E_1) = -1
+		      \]
+		\item $E_2$ is obtained by multiplying a row of $I_n$ by a nonzero scalar.
+		      \[
+			      det(E_2) = k
+		      \]
+		\item $E_3$ is obtained by adding a multiple of one row of $I_n$ to another row.
+		      \[
+			      det(E_3) = 1
+		      \]
+	\end{itemize}
+
 \end{homeworkProblem}
 
 % Homework problem 6 sec 4.3 problem 5
@@ -292,16 +381,59 @@
 			2x_1 + x_2 + x_3   & = 0
 		\end{aligned}
 	\]
+	\[
+		\begin{split}
+			det(A)   & = \begin{bmatrix}
+				             1  & -1 & 4 \\
+				             -8 & 3  & 1 \\
+				             2  & 1  & 1
+			             \end{bmatrix} = 32                                      \\
+			det(A_1) & = \begin{bmatrix}
+				             -4 & -1 & 4 \\
+				             8  & 3  & 1 \\
+				             0  & 1  & 1
+			             \end{bmatrix} = 32                                      \\
+			det(A_2) & = \begin{bmatrix}
+				             1  & -4 & 4 \\
+				             -8 & 8  & 1 \\
+				             2  & 0  & 1
+			             \end{bmatrix} = -96                                     \\
+			det(A_3) & = \begin{bmatrix}
+				             1  & -1 & -4 \\
+				             -8 & 3  & 8  \\
+				             2  & 1  & 0
+			             \end{bmatrix} = 32                                      \\
+			x_1      & = \frac{det(A_1)}{det(A)} = \frac{32}{-64} = -\frac{1}{2} \\
+			x_2      & = \frac{det(A_2)}{det(A)} = \frac{-96}{-64} = \frac{3}{2} \\
+			x_3      & = \frac{det(A_3)}{det(A)} = \frac{32}{-64} = -\frac{1}{2}
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 7 sec 4.3 problem 10
 \begin{homeworkProblem}
 	A matrix $M \in M_{nxn}(F)$ is called nipotent if, some positive interrger $k$, $M^k = 0$, where $0$ is the $n x n$ zero matrix. Prove that if $M$ is nilpotent, then $det(M) = 0$.
+	\begin{proof}
+		Let $M \in M_{nxn}(F)$ be a nilpotent matrix. Then there exists a positive integer $k$ such that $M^k = 0$. We will prove that $det(M) = 0$ using properties of determinants
+		Given that $M^k = 0$, then $det(M^k) = det(0) = 0$.
+		Using the property of determinants that $det(M^k) = det(M)^k$, then $det(M)^k = 0$.
+		Since the only solution that satisfies is when $det(M) = 0$
+		Therefore, if $M$ is nilpotent, then $det(M) = 0$
+	\end{proof}
 \end{homeworkProblem}
 
 % Homework problem 8 sec 4.3 problem 16
 \begin{homeworkProblem}
 	Use determinants to prove that if $A,B \in M_{nxn}(F)$ are sucht that $AB = I$, then $A$ is invertible (and hence $B = A^{-1}$).
+	\begin{proof}
+		\begin{align*}
+			\intertext{If $A$ is invertible, then}
+			AB                         & = I                             \\
+			\intertext{Given the only solution to the equation is when $B = A^{-1}$}
+			\det(A) \cdot \det(A^{-1}) & = \det(AA^{-1}) = \det(I_n) = 1 \\
+		\end{align*}
+		Therefore, $\det(A^{-1}) = \frac{1}{\det(A)}$ if $A$ is invertible and $\det(A) \neq 0$ and $B = A^{-1}$.
+	\end{proof}
 \end{homeworkProblem}
 
 % Homework problem 9 sec 4.3 problem 24
@@ -318,6 +450,27 @@
 	\]
 
 	Compute $det(A + tI)$ where $I$ is the $n x n$ identity matrix.
+	\[
+		\begin{split}
+			A + tI = \begin{vmatrix}
+				         t      & 0      & 0      & \cdots & 0      & a_{0}    \\
+				         -1     & t      & 0      & \cdots & 0      & a_{1}    \\
+				         0      & -1     & t      & \cdots & 0      & a_{2}    \\
+				         \vdots & \vdots & \vdots & \ddots & \vdots & \vdots   \\
+				         0      & 0      & 0      & \cdots & -1     & ta_{n-1} \\
+			         \end{vmatrix} \\
+			det(A_{2x2}) = \begin{vmatrix}
+				               t  & 0 \\
+				               -1 & t
+			               \end{vmatrix} = t^2                             \\
+			det(A_{3x3}) = \begin{vmatrix}
+				               t  & 0  & 0 \\
+				               -1 & t  & 0 \\
+				               0  & -1 & t
+			               \end{vmatrix} = t^3 + t + 1                     \\
+			det(A_{nxn}) = t^n + t^{n-2} + t^{n-3} + \ldots + t + 1
+		\end{split}
+	\]
 \end{homeworkProblem}
 
 % Homework problem 10 sec 4.4 Section 4.4 problem 4th
