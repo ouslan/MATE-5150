@@ -8,7 +8,7 @@
 \usepackage{tikz}
 \usepackage[plain]{algorithm}
 \usepackage{algpseudocode}
-
+\usepackage[inline,shortlabels]{enumitem}
 \usetikzlibrary{automata,positioning}
 
 %
@@ -124,6 +124,8 @@
 
 % Integral dx
 \newcommand{\dx}{\mathrm{d}x}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rm}{\mathbb{R}_{m \times n}}
 
 % Alias for the Solution section header
 \newcommand{\solution}{\textbf{\large Solution}}
@@ -153,33 +155,68 @@
 		\end{bmatrix}
 	\]
 	\begin{itemize}
-		\item Hallar
+		\item Hallar $A + C$
+		\item Para cual valor de $\alpha$ la matriz $A$ es simétrica?
+		\item Para cuales valores de $\alpha$ y $\beta$ la matriz $A+B$ es antisimétrica?
+		\item Para cuales valores de $\alpha$ y $\beta$ la matriz $A+B$ es triangular?
 	\end{itemize}
 \end{homeworkProblem}
 
 % Homework sec 1.2.4
 \begin{homeworkProblem}
-
+	Pruebe que el elemento neutro para la suma en $\mathbb{R}_{m\times n}$ es único. Es decir, si
+	$[0]$ y $[0]^T$ son tales que para toda matriz $A \in \mathbb{R}_{m \times n}$, $A + 0 = 0 + A =  A$ y
+	$A + 0' = 0' + A = A$ entonces $0 = 0'$.
 \end{homeworkProblem}
 
 % Homework sec 1.2.5
 \begin{homeworkProblem}
+	Pruebe que para cada matriz $A \in \mathbb{R}_{m \times n}$, el inverso aditivo de $A$ es unico. Es decir,
+	si $A +B = B + A = 0$ y $A + C = C + A = 0$ entonces $B = C$.
 \end{homeworkProblem}
 
 % Homework sec 1.2.6
 \begin{homeworkProblem}
+	Sea $A$ y $B$ matrixes de orden $m \times n$ y $\gamma$ un escalar. Pruebe que:
+	\begin{enumerate}[(a)]
+		\item $(A^T)^T = A$
+		\item $(A + B)^T = A^T + B^T$
+		\item $(\gamma A)^T = \gamma A^T$.
+	\end{enumerate}
 \end{homeworkProblem}
 
 % Homework sec 1.2.7
 \begin{homeworkProblem}
+	Para cada condicion dada hallar una matriz $A$ que la satisfaga:
+	\begin{enumerate}
+		\item $A$ es a la vez triangular superior y triangular inferior.
+		\item $A$ es a la vez simetrica y antisimetrica.
+		\item $A^T=A$
+		\item $A^T= -A$
+	\end{enumerate}
 \end{homeworkProblem}
 
 % Homework sec 1.2.8
 \begin{homeworkProblem}
+	Sean $A$ y $B$ matrices cuadradas de orden $n$. Probar:
+	\begin{enumerate}[(a)]
+		\item Si $A$ es simetrica entonces, para todo escalar $\gamma$, $\gamma A$ es matriz simetrica.
+		\item Si $A$ es antisimetrica entrocnes, para todo escalar $\gamma$, $\gamma A$ es antisimetrica.
+		\item Si $A$ y $B$ son simetricas entonces $A + B$ es simetrica.
+	\end{enumerate}
 \end{homeworkProblem}
 
 % Homework sec 1.2.9
 \begin{homeworkProblem}
+	Probar que para toda matriz cuadrada $A$,
+	\begin{enumerate}[(a)]
+		\item La matriz $A + A^T$ es simetrica y la matriz $A-A^T$ es antisimetrica.
+		\item  La matriz $A$ puede expresarse de manera unica como la suma de una matriz simetrica y
+		      una matriz antisimetrica.
+		\item Sea $A = \begin{bmatrix}
+				      2 & -1 \\ 3 & 5
+			      \end{bmatrix}$. Descomponer la matriz $A$ como la suma de una matriz sismetrica y una matriz antisimetrica.
+	\end{enumerate}
 \end{homeworkProblem}
 
 \end{document}
