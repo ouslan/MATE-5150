@@ -11,12 +11,9 @@ from sympy import *
 ```
 
 ```{python}
-m,x,y = symbols('m x y')
-d = Matrix([[1/sqrt(1+m**2)], [m/sqrt(1+m**2)]])
-n = Matrix([[m/sqrt(1+m**2)], [-1/sqrt(1+m**2)]])
-I = Matrix([[1, 0], [0, 1]])
-R = I - 2*n*n.T
-R
+a,b,h = symbols('a b h')
+d = Matrix([[0 , a, b], [a, a, h], [b,h,a]])
+d.det()
 ```
 
 ```{python}
