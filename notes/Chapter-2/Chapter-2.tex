@@ -1,0 +1,91 @@
+\documentclass[10pt, oneside]{article}
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry}
+
+\geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rmn}{\mathbb{R}_{m \times n}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\nulla}{N(A^T)}
+\newcommand{\ranka}{r(A)}
+\newcommand{\Cdot}{\boldsymbol{\cdot}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{conv}{Convention}
+\newtheorem{rem}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+
+
+\title{MATE 5150: Teoría de Espacios Vectoriales}
+\author{Alejandro M. Ouslan}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\vspace{.25in}
+
+\section{Los Cuatro Subespacios Fundamentales Parte I}
+
+\section{Los Cuatro Subespacios Fundamentales Parte II}
+\subsection{Espacio Nullo}
+\begin{enumerate}
+	\item $A \in \Rmn$
+	\item $ N(A) = \{ z \in \R^n : Az =0 \}$
+	\item Base: gen $ \{ U_1, U_2, \cdots, U_i $
+\end{enumerate}
+\subsection{Dimension:}
+\begin{enumerate}
+	\item Fila: $ E(A_T):$
+\end{enumerate}
+
+\subsection{}
+
+\rem{
+	Sea $ A \in \Rmn$ y $U$ una matiz esclanodada y una base para $R(A)$ (es sun sub de $R^m$) esta
+	formada por las columnas de $A$ corespodientes a las columnas de $U$ que tienen pivote:
+	$\dim  R(A) = r(A)$
+}
+
+\[
+	\begin{bmatrix}
+		0  & 0  & 0  & 1 \\
+		1  & -1 & -2 & 0 \\
+		-1 & 1  & 2  & 1 \\
+	\end{bmatrix}
+\]
+\[
+	P_{12}, f_1 + f_3, -f_2+f_3
+\]
+\[
+	U = \begin{bmatrix}
+		1 & -1 & -2 & 0 \\
+		0 & 0  & 0  & 1 \\
+		0 & 0  & 0  & 0
+	\end{bmatrix}
+\]
+base $ R(A) = \{ \begin{bmatrix}0 \\ 1 \\ -1\end{bmatrix}, \begin{bmatrix} 1 \\ 0 \\ 1
+	\end{bmatrix} $
+
+\subsection{Base y Dimension Nulo Izquierdo}
+$N(A^T) = \{ Z \in \R^m : A ^TZ = 0\}$
+
+\rem{
+	Sea $A\in Rmn$ tal que $r9A)=r$, P una matriz permutacion, L una matriz inferor con dagonal unitaria., y U
+	una mateiz escalonada tal que $PA = LU$.
+	\begin{enumerate}
+		\item dim $ N(A^T) = M-r(A)$
+		\item Base $\nulla$. esta data por los vectores que U parecen como los ultimos $(m-r)$
+		      filas de las matriz $L^{-1)P}$
+	\end{enumerate}
+}
+
+\subsectio
+\end{document}
